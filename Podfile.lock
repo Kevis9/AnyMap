@@ -1,0 +1,24 @@
+PODS:
+  - BaiduMapKit (5.0.0)
+  - BMKLocationKit (1.8.0)
+  - Masonry (1.1.0)
+
+DEPENDENCIES:
+  - BaiduMapKit
+  - BMKLocationKit
+  - Masonry
+
+SPEC REPOS:
+  trunk:
+    - BaiduMapKit
+    - BMKLocationKit
+    - Masonry
+
+SPEC CHECKSUMS:
+  BaiduMapKit: 3a875b001293a9ee6692febd549d8bf82108dbac
+  BMKLocationKit: 29f9f04827bfe2f2ca2c1c87b11161f05d4189a5
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+
+PODFILE CHECKSUM: 5ac734061f75e4780d747db7bc8800fbc5221e4a
+
+COCOAPODS: 1.8.4
