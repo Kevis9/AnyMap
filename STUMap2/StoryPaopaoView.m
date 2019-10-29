@@ -54,6 +54,7 @@ CGContextSetFillColorWithColor(context, [UIColor colorWithRed:0.3 green:0.3 blue
     CGContextAddArcToPoint(context, maxx, miny, maxx, maxx, radius);
     CGContextAddArcToPoint(context, maxx, maxy, midx, maxy, radius);
     CGContextClosePath(context);
+    
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -68,21 +69,29 @@ CGContextSetFillColorWithColor(context, [UIColor colorWithRed:0.3 green:0.3 blue
 
 - (void)initSubViews
 {
-    
 
-    self.titleTextView = [[UITextView alloc] initWithFrame:CGRectMake(kPortraitMargin * 2 + kPortraitWidth, kPortraitMargin, kTitleWidth, kTitleHeight)];
-    self.titleTextView.font = [UIFont boldSystemFontOfSize:14];
-    self.titleTextView.textColor = [UIColor whiteColor];
-    self.titleTextView.backgroundColor = [UIColor blackColor];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(65,5,50,20)];
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:10];
+    self.titleLabel.textColor = [UIColor whiteColor];
+    self.titleLabel.backgroundColor = [UIColor clearColor];
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleLabel.numberOfLines = 1;
+    self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
-    [self addSubview:self.titleTextView];
+    [self addSubview:self.titleLabel];
 
+    self.storyLabel = [[UILabel alloc] initWithFrame:CGRectMake(65,25,50,40)];
+    self.storyLabel.font = [UIFont systemFontOfSize:8];
+    self.storyLabel.textColor = [UIColor whiteColor];
+    self.storyLabel.backgroundColor = [UIColor clearColor];
+    self.storyLabel.numberOfLines=0;
+    self.storyLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    [self addSubview:self.storyLabel];
+
+    self.storyImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"标注"]];
+    self.storyImgView.frame = CGRectMake(5,5,60,60);
+    [self addSubview:self.storyImgView];
     
-    self.storyTextView = [[UITextView alloc] initWithFrame:CGRectMake(kPortraitMargin * 2 + kPortraitWidth, kPortraitMargin * 2 + kTitleHeight, kTitleWidth, kTitleHeight)];
-    self.storyTextView.font = [UIFont systemFontOfSize:12];
-    self.storyTextView.textColor = [UIColor whiteColor];
-    self.storyTextView.backgroundColor = [UIColor blackColor];
-    [self addSubview:self.storyTextView];
 }
 
 @end

@@ -13,8 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface StoryPaopaoView : UIView
 
 @property (nonatomic, strong) UIImage *image; //故事图
-@property (nonatomic, strong) UITextView *titleTextView; //故事主题
-@property (nonatomic, strong) UITextView *storyTextView; //故事
+@property (nonatomic, strong) UILabel *titleLabel; //故事主题
+@property (nonatomic, strong) UILabel *storyLabel; //故事
+@property (nonatomic, strong) UIImageView *storyImgView; //故事图片
 
 @end
 

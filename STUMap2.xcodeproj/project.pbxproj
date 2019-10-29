@@ -25,7 +25,6 @@
 		4C7DE4562365874900C444C2 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE4552365874900C444C2 /* CoreDataManager.m */; };
 		4C7DE45B2365909500C444C2 /* StoryPointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE4592365909500C444C2 /* StoryPointModel.m */; };
 		4C7DE45C2365909500C444C2 /* StoryPointModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE45A2365909500C444C2 /* StoryPointModel+CoreDataProperties.m */; };
-		4C7DE46223659C5600C444C2 /* BMKPointAnnotation+StoryID.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE46123659C5600C444C2 /* BMKPointAnnotation+StoryID.m */; };
 		4C7DE4652365BD5300C444C2 /* SCBMKPointAnnotationSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE4642365BD5300C444C2 /* SCBMKPointAnnotationSubClass.m */; };
 		8BDDEF25761A6CACC54DE16B /* libPods-STUMap2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A865330BB0BC076DDDFAC871 /* libPods-STUMap2.a */; };
 /* End PBXBuildFile section */
@@ -84,8 +83,6 @@
 		4C7DE4582365909500C444C2 /* StoryPointModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryPointModel.h; sourceTree = "<group>"; };
 		4C7DE4592365909500C444C2 /* StoryPointModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoryPointModel.m; sourceTree = "<group>"; };
 		4C7DE45A2365909500C444C2 /* StoryPointModel+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "StoryPointModel+CoreDataProperties.m"; sourceTree = "<group>"; };
-		4C7DE46023659C5600C444C2 /* BMKPointAnnotation+StoryID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BMKPointAnnotation+StoryID.h"; sourceTree = "<group>"; };
-		4C7DE46123659C5600C444C2 /* BMKPointAnnotation+StoryID.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BMKPointAnnotation+StoryID.m"; sourceTree = "<group>"; };
 		4C7DE4632365BD5300C444C2 /* SCBMKPointAnnotationSubClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCBMKPointAnnotationSubClass.h; sourceTree = "<group>"; };
 		4C7DE4642365BD5300C444C2 /* SCBMKPointAnnotationSubClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCBMKPointAnnotationSubClass.m; sourceTree = "<group>"; };
 		517CE2F3308207B1F2669D2B /* Pods-STUMap2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STUMap2.debug.xcconfig"; path = "Target Support Files/Pods-STUMap2/Pods-STUMap2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,8 +166,6 @@
 				4C7DE44A23656EF700C444C2 /* StoryDB.xcdatamodeld */,
 				4C7DE4542365874900C444C2 /* CoreDataManager.h */,
 				4C7DE4552365874900C444C2 /* CoreDataManager.m */,
-				4C7DE46023659C5600C444C2 /* BMKPointAnnotation+StoryID.h */,
-				4C7DE46123659C5600C444C2 /* BMKPointAnnotation+StoryID.m */,
 				4C7DE4632365BD5300C444C2 /* SCBMKPointAnnotationSubClass.h */,
 				4C7DE4642365BD5300C444C2 /* SCBMKPointAnnotationSubClass.m */,
 			);
@@ -414,7 +409,6 @@
 				4C7DE20023614D1F00C444C2 /* main.m in Sources */,
 				4C7DE45B2365909500C444C2 /* StoryPointModel.m in Sources */,
 				4C7DE4562365874900C444C2 /* CoreDataManager.m in Sources */,
-				4C7DE46223659C5600C444C2 /* BMKPointAnnotation+StoryID.m in Sources */,
 				4C7DE1F223614D1700C444C2 /* SceneDelegate.m in Sources */,
 				4C7DE4492365427B00C444C2 /* StoryPaopaoView.m in Sources */,
 				4C7DE44C23656EF700C444C2 /* StoryDB.xcdatamodeld in Sources */,

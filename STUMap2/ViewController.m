@@ -36,7 +36,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
     self.mapView.userTrackingMode = BMKUserTrackingModeFollow;
@@ -67,6 +66,7 @@
 
 #pragma mark - BMKMapViewDelegate
 
+//线的视图
 - (BMKOverlayView *)mapView:(BMKMapView *)mapView viewForOverlay:(id<BMKOverlay>)overlay {
     if ([overlay isKindOfClass:[BMKPolyline class]]){
              BMKPolylineView *polylineView = [[BMKPolylineView alloc] initWithPolyline:overlay];
@@ -83,18 +83,23 @@
         return nil;
 }
 
+//点的视图,同时设置PaopaoView
 - (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id <BMKAnnotation>)annotation
 {
     if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
         static NSString *pointReuseIndentifier = @"pointReuseIndentifier";
-        BMKPinAnnotationView*annotationView = (BMKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndentifier];
+        BMKPinAnnotationView* annotationView = (BMKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndentifier];
         if (annotationView == nil) {
             annotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pointReuseIndentifier];
         }
+        
+        annotationView.image = [UIImage imageNamed:@"标注"];
+        
         annotationView.pinColor = BMKPinAnnotationColorRed;
         annotationView.canShowCallout= YES;      //设置气泡可以弹出，默认为NO
         annotationView.animatesDrop=YES;         //设置标注动画显示，默认为NO
         annotationView.draggable = YES;          //设置标注可以拖动，默认为NO
+        annotationView.animatesDrop = NO;        //去掉掉落效果
         
         StoryPaopaoView *custompview = [[StoryPaopaoView alloc] init];
         custompview.frame = CGRectMake(0, 0, 120.0f, 70.0f);
@@ -109,18 +114,19 @@
 
 - (void)mapview:(BMKMapView *)mapView onLongClick:(CLLocationCoordinate2D)coordinate{
     
-    //刷新田间底部的slideview
+    //长按之后底部的slideview会被更换
     if(self.bottomSlideView)
         [self.bottomSlideView removeFromSuperview];
     self.bottomSlideView = [[SlideScrollView alloc] initWithFrame:self.view.bounds];
     self.bottomSlideView.delegate = self;
     [self.view addSubview:self.bottomSlideView];
     
+    //使用子类来记录该点的ID---结合Coredata
     SCBMKPointAnnotationSubClass* annotation = [[SCBMKPointAnnotationSubClass alloc]init];
     annotation.coordinate = coordinate;
+    
     self.currentPoint = annotation;
     NSLog(@"+++++%p",self.currentPoint);
-
     [self.mapView addAnnotation:annotation];
     
 }
@@ -140,8 +146,11 @@
         NSLog(@"%@",dic);
         if(dic)
         {
-            ((StoryPaopaoView*)view.paopaoView.subviews[0]).titleTextView.text = dic[@"title"];
-            ((StoryPaopaoView*)view.paopaoView.subviews[0]).storyTextView.text = dic[@"content"];
+            ((StoryPaopaoView*)view.paopaoView.subviews[0]).titleLabel.text = dic[@"title"];
+            ((StoryPaopaoView*)view.paopaoView.subviews[0]).storyLabel.text = dic[@"content"];
+//            [((StoryPaopaoView*)view.paopaoView.subviews[0]).titleLabel sizeToFit];
+//            [((StoryPaopaoView*)view.paopaoView.subviews[0]).storyLabel sizeToFit];
+//            
             self.bottomSlideView.StoryTextView.text = dic[@"content"];
             self.bottomSlideView.TitleTextView.text = dic[@"title"];
             flag=1;
@@ -149,9 +158,9 @@
     }
     if(!flag)
     {
-        ((StoryPaopaoView*)view.paopaoView.subviews[0]).titleTextView.text = self.bottomSlideView.TitleTextView.text;
-        NSLog(@"%p",((StoryPaopaoView*)view.paopaoView.subviews[0]).titleTextView);
-        ((StoryPaopaoView*)view.paopaoView.subviews[0]).storyTextView.text= self.bottomSlideView.StoryTextView.text;
+        ((StoryPaopaoView*)view.paopaoView.subviews[0]).titleLabel.text = self.bottomSlideView.TitleTextView.text;
+        NSLog(@"%p",((StoryPaopaoView*)view.paopaoView.subviews[0]).titleLabel);
+        ((StoryPaopaoView*)view.paopaoView.subviews[0]).storyLabel.text= self.bottomSlideView.StoryTextView.text;
     }
 
 }
@@ -213,7 +222,7 @@
     [dic setValue:[NSNumber numberWithDouble:self.currentPoint.coordinate.latitude] forKey:@"latitude"];
     [dic setValue:[NSNumber numberWithDouble:self.currentPoint.coordinate.longitude] forKey:@"longitude"];
     [dic setValue:[NSDate date] forKey:@"createdtime"];
-    
+    //存储成功之后记录该点的ID
     self.currentPoint.pointID = [[CoreDataManager sharedInstance] createStoryPoint:dic];
     if(self.currentPoint.pointID)
     {

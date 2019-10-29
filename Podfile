@@ -6,4 +6,5 @@ target 'STUMap2' do
    pod "BaiduMapKit"
    pod "BMKLocationKit"
    pod "Masonry"
+   pod 'SDAutoLayout', '~> 2.1.3'
 end
