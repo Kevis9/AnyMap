@@ -10,6 +10,7 @@
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
 #import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
 #import <BMKLocationKit/BMKLocationComponent.h>
+#import <BaiduMapAPI_Search/BMKSearchComponent.h> //引入地理编码
 #import "SlideScrollView.h"
 #import "StoryPaopaoView.h"
 #import "CoreDataManager.h"
@@ -19,7 +20,8 @@
 @interface ViewController ()<BMKLocationManagerDelegate,
                              BMKMapViewDelegate,
                              SlideScrollViewDelegate,
-                             TZImagePickerControllerDelegate>
+                             TZImagePickerControllerDelegate,
+                             BMKGeoCodeSearchDelegate>
 
 @property(nonatomic,strong) BMKMapView *mapView;
 
@@ -30,6 +32,7 @@
 @property(nonatomic,strong) SlideScrollView *bottomSlideView;
 
 @property(nonatomic,strong) SCBMKPointAnnotationSubClass *currentPoint;
+
 
 @end
 
@@ -116,12 +119,39 @@
 
 - (void)mapview:(BMKMapView *)mapView onLongClick:(CLLocationCoordinate2D)coordinate{
     
+    //获取长按点位置信息
+    BMKGeoCodeSearch *geoCodeSearch = [[BMKGeoCodeSearch alloc]init];
+    //设置反地理编码检索的代理
+    geoCodeSearch.delegate = self;
+    //初始化请求参数类BMKReverseGeoCodeOption的实例
+    BMKReverseGeoCodeSearchOption *reverseGeoCodeOption = [[BMKReverseGeoCodeSearchOption alloc] init];
+    // 待解析的经纬度坐标（必选）
+    reverseGeoCodeOption.location = coordinate;
+    //是否访问最新版行政区划数据（仅对中国数据生效）
+    reverseGeoCodeOption.isLatestAdmin = YES;
+    /**
+     根据地理坐标获取地址信息：异步方法，返回结果在BMKGeoCodeSearchDelegate的
+     onGetAddrResult里
+     
+     reverseGeoCodeOption 反geo检索信息类
+     成功返回YES，否则返回NO
+     */
+    
     //长按之后底部的slideview会被更换
     if(self.bottomSlideView)
         [self.bottomSlideView removeFromSuperview];
     self.bottomSlideView = [[SlideScrollView alloc] initWithFrame:self.view.bounds];
     self.bottomSlideView.delegate = self;
     [self.view addSubview:self.bottomSlideView];
+    BOOL flag = [geoCodeSearch reverseGeoCode:reverseGeoCodeOption];
+    if (flag) {
+        NSLog(@"反地理编码检索成功");
+    } else {
+        [self.bottomSlideView.addressLabel setText:@"暂无位置信息"];
+        NSLog(@"反地理编码检索失败");
+        
+    }
+    
     
     //使用子类来记录该点的ID---结合Coredata
     SCBMKPointAnnotationSubClass* annotation = [[SCBMKPointAnnotationSubClass alloc]init];
@@ -217,6 +247,16 @@
     self.userLocation.location = location.location;
     //实现该方法，否则定位图标不出现
     [_mapView updateLocationData:self.userLocation];
+    
+}
+
+#pragma mark -BMKGeoCodeSearchDelegate
+
+- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeSearchResult *)result errorCode:(BMKSearchErrorCode)error{
+    
+    //获得反地理位置编码
+    [self.bottomSlideView.addressLabel setText:result.address];
+
 }
 
 #pragma mark -SlideView Delgate

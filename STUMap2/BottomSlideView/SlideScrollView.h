@@ -38,6 +38,7 @@ typedef void(^CellPickImgCopleteblock)(NSArray* imgs);
 @property(nonatomic,strong) id<SlideScrollViewDelegate> delegate;
 @property(nonatomic,assign) NSInteger numOfImgs;
 @property(nonatomic,strong) UIImage *firstImg;
+@property (nonatomic, strong) UILabel *addressLabel;         //显示具体地点的Label
 
 @end
 

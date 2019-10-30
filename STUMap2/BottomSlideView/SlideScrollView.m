@@ -33,8 +33,6 @@
 
 @property (nonatomic, strong) UIButton *editPointbtn;   //编辑故事点,防止重复添加
 
-@property (nonatomic, strong) UILabel *addressLabel;         //显示具体地点的Label
-
 @property (nonatomic, strong) UITableViewCell *tmpCell;     //暂时代表放置图片的cell
 
 @property (nonatomic, strong) UIButton *tmpBtn;             //暂时代表图片添加按钮
@@ -147,7 +145,7 @@
         .heightIs(10);
         
         //布局--详细地址Label,height都是试出来的
-        [self.addressLabel setText:@"杭州市........hwlwlwlwlwllwlw"];
+        //[self.addressLabel setText:@"暂无位置信息"];
         self.addressLabel.sd_layout
         .leftSpaceToView(cell.contentView,15)
         .topSpaceToView(grayLabel,5)
