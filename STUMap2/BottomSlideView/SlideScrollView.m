@@ -11,6 +11,7 @@
 #import "EditStoryTableViewCell.h"
 #import <SDAutoLayout.h>
 #import <Masonry.h>
+//#import <TZImagePickerController.h>
 
 #define FULL_TOP (STATUS_BAR_HEIGHT + 30.0) // 全尺寸模式下view的y坐标
 #define SMALL_TOP (SCREEN_HEIGHT - 200.0)   // 缩小模式下view的y坐标
@@ -34,6 +35,9 @@
 
 @property (nonatomic, strong) UILabel *addressLabel;         //显示具体地点的Label
 
+@property (nonatomic, strong) UITableViewCell *tmpCell;     //暂时代表放置图片的cell
+
+@property (nonatomic, strong) UIButton *tmpBtn;             //暂时代表图片添加按钮
 @end
 
 @implementation SlideScrollView
@@ -47,6 +51,9 @@
 }
 
 - (void)initViews {
+    
+    //初始图片数量为0
+    self.numOfImgs = 0;
     self.top = SMALL_TOP;
     self.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.shadeView];
@@ -90,6 +97,7 @@
     [self.tableView registerClass:[EditStoryTableViewCell class] forCellReuseIdentifier:@"cellWithStory"];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cellWithBtn"];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cellWithImg"];
     
     //[self addSubview:self.searchBar];
     [self addSubview:self.tableView];
@@ -105,7 +113,7 @@
 #pragma mark - TableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -171,11 +179,9 @@
         cell.autoresizesSubviews = YES;
         [grayLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(cell.contentView.mas_top).offset(10).priority(999);
-            make.bottom.equalTo(cell.contentView.mas_bottom).offset(-125);
+            make.bottom.equalTo(cell.contentView.mas_bottom).offset(-130);
          }];
-//        [self.editPointbtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.bottom.equalTo(cell.contentView.mas_bottom).offset(-10).priority(999);
-//        }];
+
         return cell;
     }
     else if(indexPath.row==1)
@@ -186,7 +192,9 @@
        cell.selectionStyle = UITableViewCellSelectionStyleNone;
        [cell.textview.placeholder setText:@"标题"];
        self.TitleTextView = cell.textview;
-        return cell;
+       self.TitleTextView.font = [UIFont boldSystemFontOfSize:18];
+       cell.separatorInset = UIEdgeInsetsMake(0,0,0,cell.bounds.size.width+100);
+       return cell;
        
     }
     else if(indexPath.row==2)
@@ -199,20 +207,113 @@
         self.StoryTextView = cell.textview;
         return cell;
     }
-    
+    else if(indexPath.row==3)
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellWithImg"];
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 112, 120)];
+        btn.backgroundColor = [UIColor whiteColor];
+        [btn setImage:[UIImage imageNamed:@"添加"] forState:UIControlStateNormal];
+        btn.layer.cornerRadius = 8.0f;
+        [btn addTarget:self action:@selector(addImgs:) forControlEvents:UIControlEventTouchUpInside];
+      
+        [cell.contentView addSubview:btn];
+        
+        //btn布局
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(cell.contentView.mas_top).offset(15).priority(999);
+            make.height.mas_greaterThanOrEqualTo(120).priority(888);
+            make.bottom.equalTo(cell.contentView.mas_bottom).offset(-15).priority(777);
+            make.left.equalTo(cell.contentView.mas_left).offset(22);
+            make.right.equalTo(cell.contentView.mas_right).offset(-280);
+        }];
+        
+        //给btn添加虚线
+        CAShapeLayer *layer = [[CAShapeLayer alloc] init];
+        layer.frame = CGRectMake(0,0,btn.frame.size.width,btn.frame.size.height);
+        layer.backgroundColor = [UIColor clearColor].CGColor;
+
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:layer.frame cornerRadius:8];
+        layer.path = path.CGPath;
+        layer.lineWidth = 2.0f;
+        layer.lineDashPattern = @[@5, @5];
+        layer.fillColor = [UIColor clearColor].CGColor;
+        //虚线的颜色
+        layer.strokeColor = [UIColor colorWithRed:171/255.0 green:170/255.0 blue:170/255.0 alpha:1].CGColor;
+        [btn.layer addSublayer:layer];
+        self.tmpCell = cell;
+        
+        return cell;
+    }
     return nil;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if(indexPath.row==0)
-//        return 150;
-//    else
-//    {
-//        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//        return cell.frame.size.height;
-//    }
-//}
+//添加图片
+- (void)addImgs:(UIButton*)btn{
+    
+    self.tmpBtn = btn;
+    [self.delegate pickImgFinishedHandle:^(NSArray * _Nonnull imgs) {
 
+        if(self.numOfImgs == 0)
+        {
+            self.firstImg = imgs[0]; //存储九宫格的第一张图
+        }
+        
+        //添加完图片,获得新的图片,对Cell进行布局
+        for(int i=0;i<[imgs count];i++)
+        {
+            //创建UIimageview
+            UIImageView *imgView = [[UIImageView alloc] initWithImage:imgs[i]];
+            imgView.layer.cornerRadius = 8;
+            [self.tmpCell addSubview:imgView];
+            //当前图片所在的位置
+            NSInteger index = self.numOfImgs+i;
+            [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+                //根据当前的index来计算其布局约束
+                make.top.equalTo(self.tmpCell.contentView.mas_top).offset((index/3)*129+15);
+            make.bottom.equalTo(self.tmpCell.contentView.mas_bottom).offset(-(2-(index/3)*129+15));
+                make.left.equalTo(self.tmpCell.contentView.mas_left).offset((index%3)*129+22);
+              make.right.equalTo(self.tmpCell.contentView.mas_right).offset(-(2-(index%3)*129+22));
+
+                //布置图片的大小
+                make.height.lessThanOrEqualTo(@120);
+                make.width.lessThanOrEqualTo(@112);
+
+            }];
+
+        }//for
+        
+        // 更新图片数量
+        self.numOfImgs += [imgs count];
+        if(self.numOfImgs>=9)
+        {
+            self.tmpBtn.hidden = YES;
+        }
+        else{
+            self.tmpBtn = btn;
+            [self updateConstraints];
+        }
+
+        [self.tableView beginUpdates];
+        [self.tableView endUpdates];
+    }];
+    
+}
+//更新btn约束
+- (void)updateConstraints{
+    NSInteger index = self.numOfImgs;
+    //更新btn布局
+    [self.tmpBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.tmpCell.contentView.mas_top).offset((index/3)*129+15);
+    make.bottom.equalTo(self.tmpCell.contentView.mas_bottom).offset(-15);
+
+        make.left.equalTo(self.tmpCell.contentView.mas_left).offset((index%3)*129+22);
+      make.right.equalTo(self.tmpCell.contentView.mas_right).offset(-((2-index%3)*129+22));
+        make.height.greaterThanOrEqualTo(@120);
+        make.width.lessThanOrEqualTo(@112);
+    }];
+
+    [super updateConstraints];
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
      [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -341,18 +442,37 @@
         [self.delegate addStoryPoint:self];
     
 }
+
+#pragma mark - keyboard事件
+- (void)keyboardWillShow:(NSNotification *)info{
+    
+    CGRect keyboardBounds = [[[info userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    _tableView.contentInset = UIEdgeInsetsMake(_tableView.contentInset.top,0, keyboardBounds.size.height+150, 0);
+}
+
+- (void)keyboardWillHide:(NSNotification *)info{
+    
+    _tableView.contentInset = UIEdgeInsetsMake(_tableView.contentInset.top, 0,150,0);
+}
 #pragma mark - Lazy
 
 - (UITableView *)tableView {
     if (_tableView == nil) {
         _tableView = [[UITableView alloc]init];
-        _tableView.frame = CGRectMake(0, 0, self.width, self.height-60);
+        _tableView.frame = CGRectMake(0, 0, self.width, self.height);
         _tableView.top = 60;
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.backgroundColor = [UIColor clearColor];
+        _tableView.contentInset = UIEdgeInsetsMake(_tableView.contentInset.top,0, 300, 0);
+        //监听键盘事件
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+        
+        //去掉底部空余部分
         UIView *view = [[UIView alloc] init];
-        view.backgroundColor = [UIColor clearColor];
+        view.backgroundColor = [UIColor redColor];
         [_tableView setTableFooterView:view];
         //_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_tableView.panGestureRecognizer addTarget:self action:@selector(panGestureHandle:)];
@@ -401,7 +521,7 @@
 - (UIButton *)deletePointbtn{
     if(_deletePointbtn == nil)
     {
-
+        
         //布局放在cell中
         _deletePointbtn = [[UIButton alloc] init];
         _deletePointbtn.backgroundColor = [UIColor colorWithRed:233/255.0 green:230/255.0 blue:223/255.0 alpha:0.5];
@@ -412,6 +532,7 @@
         
         _deletePointbtn.titleLabel.font = [UIFont systemFontOfSize:15];
         _deletePointbtn.layer.cornerRadius = 8;
+        
     }
     return _deletePointbtn;
 }

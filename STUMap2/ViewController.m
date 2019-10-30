@@ -14,10 +14,12 @@
 #import "StoryPaopaoView.h"
 #import "CoreDataManager.h"
 #import "SCBMKPointAnnotationSubClass.h"
+#import <TZImagePickerController.h>
 
 @interface ViewController ()<BMKLocationManagerDelegate,
                              BMKMapViewDelegate,
-                             SlideScrollViewDelegate>
+                             SlideScrollViewDelegate,
+                             TZImagePickerControllerDelegate>
 
 @property(nonatomic,strong) BMKMapView *mapView;
 
@@ -161,6 +163,11 @@
         ((StoryPaopaoView*)view.paopaoView.subviews[0]).titleLabel.text = self.bottomSlideView.TitleTextView.text;
         NSLog(@"%p",((StoryPaopaoView*)view.paopaoView.subviews[0]).titleLabel);
         ((StoryPaopaoView*)view.paopaoView.subviews[0]).storyLabel.text= self.bottomSlideView.StoryTextView.text;
+        if(self.bottomSlideView.firstImg)
+        {
+            //如果不为空,则添加上去
+            [((StoryPaopaoView*)view.paopaoView.subviews[0]).storyImgView setImage:self.bottomSlideView.firstImg];
+        }
     }
 
 }
@@ -232,6 +239,22 @@
     {
         NSLog(@"addStoryPoint----存储失败");
     }
+}
+
+- (void)pickImgFinishedHandle:(CellPickImgCopleteblock)block{
+    
+    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9-self.bottomSlideView.numOfImgs delegate:self];
+    // You can get the photos by block, the same as by delegate.
+    // 你可以通过block或者代理，来得到用户选择的照片.
+    [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
+        NSLog(@"图片选择完啦!");
+        if(block)
+        {
+            block(photos);
+        }
+    }];
+    
+    [self presentViewController:imagePickerVc animated:YES completion:nil];
 }
 #pragma mark - Lazy loading
 - (BMKLocationManager *)locationManager {

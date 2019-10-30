@@ -25,6 +25,7 @@
 self.layer.shadowColor = [[UIColor blackColor] CGColor];
 self.layer.shadowOpacity = 1.0;
 self.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+    
 }
 
 - (void)drawInContext:(CGContextRef)context

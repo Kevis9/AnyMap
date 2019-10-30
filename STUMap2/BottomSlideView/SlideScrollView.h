@@ -20,9 +20,12 @@ typedef NS_ENUM(NSInteger, SlideScrollViewState) {
 NS_ASSUME_NONNULL_BEGIN
 
 @class SlideScrollView;
+typedef void(^CellPickImgCopleteblock)(NSArray* imgs);
 @protocol SlideScrollViewDelegate <NSObject>
 
 - (void)addStoryPoint:(SlideScrollView*)slideview;
+
+- (void)pickImgFinishedHandle:(CellPickImgCopleteblock)block;
 
 @end
 
@@ -33,6 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) UITextView *TitleTextView;
 @property(nonatomic,strong) UITextView *StoryTextView;
 @property(nonatomic,strong) id<SlideScrollViewDelegate> delegate;
+@property(nonatomic,assign) NSInteger numOfImgs;
+@property(nonatomic,strong) UIImage *firstImg;
 
 @end
 

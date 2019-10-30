@@ -7,4 +7,6 @@ target 'STUMap2' do
    pod "BMKLocationKit"
    pod "Masonry"
    pod 'SDAutoLayout', '~> 2.1.3'
+   pod 'TZImagePickerController' #iOS8 and later
+   
 end

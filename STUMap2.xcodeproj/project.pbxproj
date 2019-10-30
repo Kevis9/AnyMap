@@ -209,9 +209,9 @@
 			isa = PBXGroup;
 			children = (
 				4C7DE4572365909500C444C2 /* StoryPointModel+CoreDataProperties.h */,
+				4C7DE45A2365909500C444C2 /* StoryPointModel+CoreDataProperties.m */,
 				4C7DE4582365909500C444C2 /* StoryPointModel.h */,
 				4C7DE4592365909500C444C2 /* StoryPointModel.m */,
-				4C7DE45A2365909500C444C2 /* StoryPointModel+CoreDataProperties.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
