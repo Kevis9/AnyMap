@@ -48,7 +48,7 @@
 
 /* Begin PBXFileReference section */
 		3EB21340DE6ED6F0DEAE0766 /* Pods-STUMap2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STUMap2.release.xcconfig"; path = "Target Support Files/Pods-STUMap2/Pods-STUMap2.release.xcconfig"; sourceTree = "<group>"; };
-		4C7DE1EA23614D1700C444C2 /* STUMap2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STUMap2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C7DE1EA23614D1700C444C2 /* AnyMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C7DE1ED23614D1700C444C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C7DE1EE23614D1700C444C2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4C7DE1F023614D1700C444C2 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -60,10 +60,10 @@
 		4C7DE1FC23614D1F00C444C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C7DE1FE23614D1F00C444C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C7DE1FF23614D1F00C444C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4C7DE20523614D1F00C444C2 /* STUMap2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STUMap2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C7DE20523614D1F00C444C2 /* AnyMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnyMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C7DE20923614D1F00C444C2 /* STUMap2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STUMap2Tests.m; sourceTree = "<group>"; };
 		4C7DE20B23614D1F00C444C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C7DE21023614D1F00C444C2 /* STUMap2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STUMap2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C7DE21023614D1F00C444C2 /* AnyMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnyMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C7DE21423614D1F00C444C2 /* STUMap2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STUMap2UITests.m; sourceTree = "<group>"; };
 		4C7DE21623614D1F00C444C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C7DE4372364994A00C444C2 /* SlideScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideScrollView.h; sourceTree = "<group>"; };
@@ -123,6 +123,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4C79BB2C2380240300DB08EB /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				4C79BB2D2380241F00DB08EB /* View */,
+				4C7DE44D236586D300C444C2 /* Model */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
+		4C79BB2D2380241F00DB08EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4C7DE1E123614D1700C444C2 = {
 			isa = PBXGroup;
 			children = (
@@ -138,9 +154,9 @@
 		4C7DE1EB23614D1700C444C2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C7DE1EA23614D1700C444C2 /* STUMap2.app */,
-				4C7DE20523614D1F00C444C2 /* STUMap2Tests.xctest */,
-				4C7DE21023614D1F00C444C2 /* STUMap2UITests.xctest */,
+				4C7DE1EA23614D1700C444C2 /* AnyMap.app */,
+				4C7DE20523614D1F00C444C2 /* AnyMapTests.xctest */,
+				4C7DE21023614D1F00C444C2 /* AnyMapUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,7 +164,7 @@
 		4C7DE1EC23614D1700C444C2 /* STUMap2 */ = {
 			isa = PBXGroup;
 			children = (
-				4C7DE44D236586D300C444C2 /* Model */,
+				4C79BB2C2380240300DB08EB /* Story */,
 				4C7DE43D236499B300C444C2 /* BottomSlideView */,
 				4C7DE1ED23614D1700C444C2 /* AppDelegate.h */,
 				4C7DE1EE23614D1700C444C2 /* AppDelegate.m */,
@@ -228,9 +244,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4C7DE1E923614D1700C444C2 /* STUMap2 */ = {
+		4C7DE1E923614D1700C444C2 /* AnyMap */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C7DE21923614D1F00C444C2 /* Build configuration list for PBXNativeTarget "STUMap2" */;
+			buildConfigurationList = 4C7DE21923614D1F00C444C2 /* Build configuration list for PBXNativeTarget "AnyMap" */;
 			buildPhases = (
 				40E4F5F2C20152894D906499 /* [CP] Check Pods Manifest.lock */,
 				4C7DE1E623614D1700C444C2 /* Sources */,
@@ -242,14 +258,14 @@
 			);
 			dependencies = (
 			);
-			name = STUMap2;
+			name = AnyMap;
 			productName = STUMap2;
-			productReference = 4C7DE1EA23614D1700C444C2 /* STUMap2.app */;
+			productReference = 4C7DE1EA23614D1700C444C2 /* AnyMap.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4C7DE20423614D1F00C444C2 /* STUMap2Tests */ = {
+		4C7DE20423614D1F00C444C2 /* AnyMapTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C7DE21C23614D1F00C444C2 /* Build configuration list for PBXNativeTarget "STUMap2Tests" */;
+			buildConfigurationList = 4C7DE21C23614D1F00C444C2 /* Build configuration list for PBXNativeTarget "AnyMapTests" */;
 			buildPhases = (
 				4C7DE20123614D1F00C444C2 /* Sources */,
 				4C7DE20223614D1F00C444C2 /* Frameworks */,
@@ -260,14 +276,14 @@
 			dependencies = (
 				4C7DE20723614D1F00C444C2 /* PBXTargetDependency */,
 			);
-			name = STUMap2Tests;
+			name = AnyMapTests;
 			productName = STUMap2Tests;
-			productReference = 4C7DE20523614D1F00C444C2 /* STUMap2Tests.xctest */;
+			productReference = 4C7DE20523614D1F00C444C2 /* AnyMapTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4C7DE20F23614D1F00C444C2 /* STUMap2UITests */ = {
+		4C7DE20F23614D1F00C444C2 /* AnyMapUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C7DE21F23614D1F00C444C2 /* Build configuration list for PBXNativeTarget "STUMap2UITests" */;
+			buildConfigurationList = 4C7DE21F23614D1F00C444C2 /* Build configuration list for PBXNativeTarget "AnyMapUITests" */;
 			buildPhases = (
 				4C7DE20C23614D1F00C444C2 /* Sources */,
 				4C7DE20D23614D1F00C444C2 /* Frameworks */,
@@ -278,9 +294,9 @@
 			dependencies = (
 				4C7DE21223614D1F00C444C2 /* PBXTargetDependency */,
 			);
-			name = STUMap2UITests;
+			name = AnyMapUITests;
 			productName = STUMap2UITests;
-			productReference = 4C7DE21023614D1F00C444C2 /* STUMap2UITests.xctest */;
+			productReference = 4C7DE21023614D1F00C444C2 /* AnyMapUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -305,7 +321,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4C7DE1E523614D1700C444C2 /* Build configuration list for PBXProject "STUMap2" */;
+			buildConfigurationList = 4C7DE1E523614D1700C444C2 /* Build configuration list for PBXProject "AnyMap" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -318,9 +334,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4C7DE1E923614D1700C444C2 /* STUMap2 */,
-				4C7DE20423614D1F00C444C2 /* STUMap2Tests */,
-				4C7DE20F23614D1F00C444C2 /* STUMap2UITests */,
+				4C7DE1E923614D1700C444C2 /* AnyMap */,
+				4C7DE20423614D1F00C444C2 /* AnyMapTests */,
+				4C7DE20F23614D1F00C444C2 /* AnyMapUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -437,12 +453,12 @@
 /* Begin PBXTargetDependency section */
 		4C7DE20723614D1F00C444C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4C7DE1E923614D1700C444C2 /* STUMap2 */;
+			target = 4C7DE1E923614D1700C444C2 /* AnyMap */;
 			targetProxy = 4C7DE20623614D1F00C444C2 /* PBXContainerItemProxy */;
 		};
 		4C7DE21223614D1F00C444C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4C7DE1E923614D1700C444C2 /* STUMap2 */;
+			target = 4C7DE1E923614D1700C444C2 /* AnyMap */;
 			targetProxy = 4C7DE21123614D1F00C444C2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -638,7 +654,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hwl.STUMap2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STUMap2.app/STUMap2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnyMap.app/AnyMap";
 			};
 			name = Debug;
 		};
@@ -657,7 +673,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hwl.STUMap2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STUMap2.app/STUMap2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnyMap.app/AnyMap";
 			};
 			name = Release;
 		};
@@ -698,7 +714,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4C7DE1E523614D1700C444C2 /* Build configuration list for PBXProject "STUMap2" */ = {
+		4C7DE1E523614D1700C444C2 /* Build configuration list for PBXProject "AnyMap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C7DE21723614D1F00C444C2 /* Debug */,
@@ -707,7 +723,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C7DE21923614D1F00C444C2 /* Build configuration list for PBXNativeTarget "STUMap2" */ = {
+		4C7DE21923614D1F00C444C2 /* Build configuration list for PBXNativeTarget "AnyMap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C7DE21A23614D1F00C444C2 /* Debug */,
@@ -716,7 +732,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C7DE21C23614D1F00C444C2 /* Build configuration list for PBXNativeTarget "STUMap2Tests" */ = {
+		4C7DE21C23614D1F00C444C2 /* Build configuration list for PBXNativeTarget "AnyMapTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C7DE21D23614D1F00C444C2 /* Debug */,
@@ -725,7 +741,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C7DE21F23614D1F00C444C2 /* Build configuration list for PBXNativeTarget "STUMap2UITests" */ = {
+		4C7DE21F23614D1F00C444C2 /* Build configuration list for PBXNativeTarget "AnyMapUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C7DE22023614D1F00C444C2 /* Debug */,

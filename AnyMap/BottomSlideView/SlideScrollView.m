@@ -5,13 +5,13 @@
 //  Created by 刘继新 on 2018/10/22.
 //  Copyright © 2018 Topstech. All rights reserved.
 //
+//
 
 #import "SlideScrollView.h"
 #import "UIView+Size.h"
 #import "EditStoryTableViewCell.h"
 #import <SDAutoLayout.h>
 #import <Masonry.h>
-//#import <TZImagePickerController.h>
 
 #define FULL_TOP (STATUS_BAR_HEIGHT + 30.0) // 全尺寸模式下view的y坐标
 #define SMALL_TOP (SCREEN_HEIGHT - 200.0)   // 缩小模式下view的y坐标
@@ -27,9 +27,11 @@
 
 @property (nonatomic, strong) UISearchBar *searchBar;
 
-@property (nonatomic, strong) UIButton *addPointbtn;    //添加故事点
+@property (nonatomic, strong) UIButton *addPointbtn;    //保存故事点
 
 @property (nonatomic, strong) UIButton *deletePointbtn; //删除故事点
+
+@property (nonatomic, strong) UIButton *uploadPointbtn; //发布故事点
 
 @property (nonatomic, strong) UIButton *editPointbtn;   //编辑故事点,防止重复添加
 
@@ -56,6 +58,7 @@
     self.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.shadeView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(AdjustHeightFull) name:@"TextViewChange" object:nil];
+    
     // shadow
     CALayer *shadowLayer0 = [[CALayer alloc] init];
     shadowLayer0.frame = self.bounds;
@@ -91,15 +94,14 @@
     iconView.layer.cornerRadius = 2.5;
     [self addSubview:iconView];
     
-    
     [self.tableView registerClass:[EditStoryTableViewCell class] forCellReuseIdentifier:@"cellWithStory"];
-    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cellWithBtn"];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cellWithImg"];
     
     //[self addSubview:self.searchBar];
     [self addSubview:self.tableView];
     [self addSubview:self.addPointbtn];
+    
     
 }
 
@@ -135,7 +137,7 @@
         [cell.contentView addSubview:self.addressLabel];
         [cell.contentView addSubview:self.editPointbtn];
         [cell.contentView addSubview:self.addPointbtn];
-        [cell.contentView addSubview:self.deletePointbtn];
+        [cell.contentView addSubview:self.uploadPointbtn];
         
         //布局--"地址"
         grayLabel.sd_layout
@@ -144,7 +146,7 @@
         .widthIs(30)
         .heightIs(10);
         
-        //布局--详细地址Label,height都是试出来的
+        //布局--详细地址Label
         //[self.addressLabel setText:@"暂无位置信息"];
         self.addressLabel.sd_layout
         .leftSpaceToView(cell.contentView,15)
@@ -159,19 +161,21 @@
         .widthIs((self.frame.size.width-50)/3)
         .heightIs(50);
         
-        //布局--添加btn
+        //布局--保存btn
         self.addPointbtn.sd_layout
         .leftSpaceToView(self.editPointbtn,10)
         .topSpaceToView(self.addressLabel,10)
         .widthIs((self.frame.size.width-50)/3)
         .heightIs(50);
         
-        //布局--删除btn
-        self.deletePointbtn.sd_layout
+        //布局--发布btn
+        self.uploadPointbtn.sd_layout
         .leftSpaceToView(self.addPointbtn,10)
         .topSpaceToView(self.addressLabel,10)
         .widthIs((self.frame.size.width-50)/3)
         .heightIs(50);
+        
+        
         
         //布局--设置当前cell的约束
         cell.autoresizesSubviews = YES;
@@ -188,9 +192,14 @@
        EditStoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellWithStory"];
         
        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-       [cell.textview.placeholder setText:@"标题"];
+       
+        
+       [cell.label setText:@"标题"];
+       
        self.TitleTextView = cell.textview;
        self.TitleTextView.font = [UIFont boldSystemFontOfSize:18];
+        
+       //去掉水平分割线
        cell.separatorInset = UIEdgeInsetsMake(0,0,0,cell.bounds.size.width+100);
        return cell;
        
@@ -201,7 +210,8 @@
         EditStoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellWithStory"];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell.textview.placeholder setText:@"写下你的故事~"];
+//        [cell.textview.placeholder setText:@"写下你的故事~"];
+        [cell.label setText:@"故事"];
         self.StoryTextView = cell.textview;
         return cell;
     }
@@ -503,7 +513,7 @@
         //布局放在cell中布局
         _addPointbtn = [[UIButton alloc] init];
         _addPointbtn.backgroundColor =[UIColor colorWithRed:233/255.0 green:230/255.0 blue:223/255.0 alpha:0.5];
-        [_addPointbtn setTitle:@"添加" forState:UIControlStateNormal];
+        [_addPointbtn setTitle:@"保存" forState:UIControlStateNormal];
         
         [_addPointbtn setTitleColor:[UIColor colorWithRed:12/255.0 green:95/255.0 blue:250/255.0 alpha:1] forState:UIControlStateNormal];
         
@@ -548,6 +558,25 @@
         _editPointbtn.layer.cornerRadius = 8;
     }
     return _editPointbtn;
+}
+
+- (UIButton *)uploadPointbtn{
+    if(_uploadPointbtn == nil)
+    {
+        
+        //布局放在cell中
+        _uploadPointbtn = [[UIButton alloc] init];
+        _uploadPointbtn.backgroundColor = [UIColor colorWithRed:233/255.0 green:230/255.0 blue:223/255.0 alpha:0.5];
+        [_uploadPointbtn setTitle:@"发布" forState:UIControlStateNormal];
+        //设置字体颜色
+        [_uploadPointbtn setTitleColor:[UIColor colorWithRed:233/255.0 green:230/255.0 blue:223/255.0 alpha:1] forState:UIControlStateNormal];
+        [_uploadPointbtn setTitleColor:[UIColor colorWithRed:12/255.0 green:95/255.0 blue:250/255.0 alpha:1] forState:UIControlStateNormal];
+        
+        _uploadPointbtn.titleLabel.font = [UIFont systemFontOfSize:15];
+        _uploadPointbtn.layer.cornerRadius = 8;
+        
+    }
+    return _uploadPointbtn;
 }
 
 - (UILabel *)addressLabel{

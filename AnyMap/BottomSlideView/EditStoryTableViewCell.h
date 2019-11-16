@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EditStoryTableViewCell : UITableViewCell
 
 @property(nonatomic,strong) PlaceholderTextView *textview;
-
+@property(nonatomic,strong) UILabel* label;
 @end
 
 NS_ASSUME_NONNULL_END

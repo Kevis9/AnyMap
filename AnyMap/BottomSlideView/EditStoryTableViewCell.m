@@ -21,7 +21,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self)
     {
+        self.label = [[UILabel alloc] init];
         self.textview = [[PlaceholderTextView alloc] init];
+        [self.contentView addSubview:self.label];
         [self.contentView addSubview:self.textview];
         [self setUpSubviews];
     }
@@ -31,19 +33,23 @@
 #pragma mark -布局子视图
 -(void)setUpSubviews{
         
-    
-    //TextField
+    //Label
+    [self.label setFont:[UIFont systemFontOfSize:13]];
+    [self.label setTextColor:[UIColor grayColor]];
+    self.label.frame = CGRectMake(15,5,50,30);
+    //Textview
     self.textview.font = [UIFont systemFontOfSize:16];
     self.textview.delegate = self;
     self.textview.scrollEnabled = NO;
     self.textview.showsVerticalScrollIndicator = NO;
     self.textview.showsHorizontalScrollIndicator = NO;
-    //设置textview的约束,实现自定义高度,布局
+    
+    //TextView--布局
     [self.textview mas_makeConstraints:^(MASConstraintMaker *make) {
-               make.top.equalTo(self.contentView.mas_top).offset(5).priority(999);
+               make.top.equalTo(self.contentView.mas_top).offset(35).priority(999);
                make.height.mas_greaterThanOrEqualTo(@(14)).priority(888);
                make.bottom.equalTo(self.contentView.mas_bottom).offset(-5).priority(777);
-               make.left.equalTo(self.contentView.mas_left).offset(5);
+               make.left.equalTo(self.contentView.mas_left).offset(10);
                make.right.equalTo(self.contentView.mas_right).offset(-15);
            }];
         

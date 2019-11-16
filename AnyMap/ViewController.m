@@ -33,7 +33,6 @@
 
 @property(nonatomic,strong) SCBMKPointAnnotationSubClass *currentPoint;
 
-
 @end
 
 @implementation ViewController
