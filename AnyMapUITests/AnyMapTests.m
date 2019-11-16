@@ -1,6 +1,6 @@
 //
-//  STUMap2UITests.m
-//  STUMap2UITests
+//  AnyMapUITests.m
+//  AnyMapUITests
 //
 //  Created by hwl on 2019/10/24.
 //  Copyright © 2019 hwl. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface STUMap2UITests : XCTestCase
+@interface AnyMapUITests : XCTestCase
 
 @end
 
-@implementation STUMap2UITests
+@implementation AnyMapUITests
 
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.

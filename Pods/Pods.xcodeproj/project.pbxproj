@@ -58,6 +58,7 @@
 		6BB7094445C9DB9773975EBE49D43397 /* TZVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5125752EACC231E041515D59FA36BA0 /* TZVideoPlayerController.m */; };
 		7CF2AC7A3B3ED03B30C1E4ED662B0551 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B14D91F238D7FC311697F81F54A815 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7F32531995680E7FDCDDAF54F4F22171 /* TZGifPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B975FAEC27B6E0BB102FB507ECF66C9F /* TZGifPhotoPreviewController.m */; };
+		81697D53FF46C94368E235CAFBBDBEBD /* Pods-AnyMap-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57312CE8939C3473EADA8C062051CC60 /* Pods-AnyMap-dummy.m */; };
 		81F811A56B6724F7E8E2D25364E595E3 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 349E81E4668413E3B122F42E6CDE406A /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8328EB8C171E45322F0AC452AF4E122A /* NSBundle+TZImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE17CCAF48587F1EEA8BEBF7CF1A4E7 /* NSBundle+TZImagePicker.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9194B58ACE900ED6BAE6AD92E24A2CFF /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 79CE6F52A3D78E969658B2EB9738E6C1 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -83,7 +84,6 @@
 		D72EE0E749232B2C899702FC1C9402BB /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 18343F17B86E091324067A8CA0B13954 /* Masonry-dummy.m */; };
 		D832CCB3EE8132AFA06252EB376B6214 /* TZPhotoPickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6233FF8D19F1021D59611D54D874F6D7 /* TZPhotoPickerController.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		DB6A099698F65678F880F0F142377DB9 /* UIView+Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = 985E3A0341E7719256F6C356F6CA1D50 /* UIView+Layout.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DF36CC4C673B32E3D2564C3AED51C294 /* Pods-STUMap2-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B83F21D5A29F733632EBBAC1D74B17 /* Pods-STUMap2-dummy.m */; };
 		E01988C2ACF8C3D5BA55221C243C206A /* TZImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDBCD22633ADDBAA67D8EFCA4379846 /* TZImageRequestOperation.m */; };
 		E2EC411158F38B903F4CA408A8DF5A6A /* UITableView+SDAutoTableViewCellHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CA916F968E75DBFD6718F32162363A5 /* UITableView+SDAutoTableViewCellHeight.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E76935CFF4AF327F8D9A7C1935F7D900 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1087D0B7F570EC121D2AB9E9A868E17E /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -95,40 +95,40 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0F29F14CEF5957929AD162C590EC2A69 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 55AF53E6C77A10ED4985E04D74A8878E;
-			remoteInfo = Masonry;
-		};
-		25F70DC99B0AB3BD426A47665377E15E /* PBXContainerItemProxy */ = {
+		10ECF297195B570C4F0A37902DE715CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 03932C47FBFD347205B2F367F78E9B63;
 			remoteInfo = SDAutoLayout;
 		};
-		4186112E9D3D69B2AFD3EC3A12C7A420 /* PBXContainerItemProxy */ = {
+		1409D078F0B85515A8278510A21F3B28 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2A98134A70001D88F2E8B45132A3E45D;
 			remoteInfo = BaiduMapKit;
 		};
-		5E9B05D3A96CD2D5B2908D3C401D2159 /* PBXContainerItemProxy */ = {
+		285AF25F5B7D7D13B2B799CC5DB94F2E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 144DA5B6E933224DBAE1FADCD2E3B56D;
-			remoteInfo = BMKLocationKit;
+			remoteGlobalIDString = 55AF53E6C77A10ED4985E04D74A8878E;
+			remoteInfo = Masonry;
 		};
-		A733A4B98E4880E6F68912BBD978D822 /* PBXContainerItemProxy */ = {
+		7D7A674CC51F7EFA76462C49A0CA8476 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A96BBB982D62BB807B5BD10774BE2D07;
 			remoteInfo = TZImagePickerController;
+		};
+		EADE07E0702FE3D688C07FC3ECB7EB13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 144DA5B6E933224DBAE1FADCD2E3B56D;
+			remoteInfo = BMKLocationKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -142,6 +142,7 @@
 		1087D0B7F570EC121D2AB9E9A868E17E /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		12FA422F85E63D1380AB7E2C3E6EBB0A /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
 		18343F17B86E091324067A8CA0B13954 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
+		1AFC9D438653D6FC40D88348A4EE80DE /* libPods-AnyMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-AnyMap.a"; path = "libPods-AnyMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C18E8EECC2F4CB707A2D9DAA8036A97 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
 		1FFED36A657123030ABB700256D73F15 /* libMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMasonry.a; path = libMasonry.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		202AFA7EA195D433C52926419E7A9F70 /* TZGifPhotoPreviewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZGifPhotoPreviewController.h; path = TZImagePickerController/TZImagePickerController/TZGifPhotoPreviewController.h; sourceTree = "<group>"; };
@@ -163,25 +164,25 @@
 		46D744FF8A770BF9EE2BF89013620B64 /* mapapi.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = BaiduMapKit/BaiduMapAPI_Map.framework/mapapi.bundle; sourceTree = "<group>"; };
 		542667736D51858FD4D9071D1E158DF0 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		5466531C44D8F22A93FF03F4D099F63A /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
+		57312CE8939C3473EADA8C062051CC60 /* Pods-AnyMap-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AnyMap-dummy.m"; sourceTree = "<group>"; };
 		5818A697F5771E671E7F78ABE3B65618 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		5A8F0C6BC2D450D8F69BD810439CB823 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Base.framework; path = BaiduMapKit/BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
 		5AAB0AFCB5AAE8C4A8303AF637D0D050 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Utils.framework; path = BaiduMapKit/BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
 		5C362213960FE4DB852D269E8081AFEC /* SDAutoLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDAutoLayout-dummy.m"; sourceTree = "<group>"; };
 		5D076481B1E6A47EE1C77D40045A970F /* TZAssetCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZAssetCell.h; path = TZImagePickerController/TZImagePickerController/TZAssetCell.h; sourceTree = "<group>"; };
-		5DB23D7A2D35625C1EEADC8316FFAE01 /* Pods-STUMap2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STUMap2.debug.xcconfig"; sourceTree = "<group>"; };
 		6233FF8D19F1021D59611D54D874F6D7 /* TZPhotoPickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZPhotoPickerController.h; path = TZImagePickerController/TZImagePickerController/TZPhotoPickerController.h; sourceTree = "<group>"; };
 		6394811AF9D042A51FCD2948D8B934D2 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		66398347EC392CD13410C54D177162C9 /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
 		6656F014B69274FD7754377E008D1DCD /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
 		6B5AA50C3142775BC4192908857F968D /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+SDAutoTableViewCellHeight.m"; path = "SDAutoLayoutDemo/SDAutoLayout/UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
 		6D2A06380D9D45EE7010B03985D18877 /* TZImageRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZImageRequestOperation.h; path = TZImagePickerController/TZImagePickerController/TZImageRequestOperation.h; sourceTree = "<group>"; };
-		6FBDD2D4D0E6A20803E5739DC71250BB /* Pods-STUMap2-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-STUMap2-acknowledgements.plist"; sourceTree = "<group>"; };
 		701B3D9F243CAC9B4FDF42E324FD9C2B /* TZImagePickerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZImagePickerController.m; path = TZImagePickerController/TZImagePickerController/TZImagePickerController.m; sourceTree = "<group>"; };
 		71A4FE8047E3084177262EE719F950BB /* BMKLocationReGeocode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BMKLocationReGeocode.h; path = framework/BMKLocationKit.framework/Headers/BMKLocationReGeocode.h; sourceTree = "<group>"; };
 		74037CD8BAE5148D3AD58682AD71C039 /* TZProgressView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZProgressView.m; path = TZImagePickerController/TZImagePickerController/TZProgressView.m; sourceTree = "<group>"; };
 		79ACA35C107C95B5F6BE50F042E960D4 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
 		79CE6F52A3D78E969658B2EB9738E6C1 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
 		7B409846AE22AE8D5ABCA7468DC7B8CB /* TZImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZImageManager.h; path = TZImagePickerController/TZImagePickerController/TZImageManager.h; sourceTree = "<group>"; };
+		803507D96F3C1178C33DABF880E572A9 /* Pods-AnyMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AnyMap.release.xcconfig"; sourceTree = "<group>"; };
 		80C43F2EE3984BE2BC4144CEB2BCD530 /* TZAssetModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZAssetModel.h; path = TZImagePickerController/TZImagePickerController/TZAssetModel.h; sourceTree = "<group>"; };
 		8167905B06B9FDCC476FF4BFFF2F44C5 /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Cloud.framework; path = BaiduMapKit/BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
 		8206DA84E85670850EDC523AF3F311EC /* SDAutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAutoLayout.h; path = SDAutoLayoutDemo/SDAutoLayout/SDAutoLayout.h; sourceTree = "<group>"; };
@@ -190,13 +191,14 @@
 		8BBB0D3D43E4CDBAA3860F58A5A848E0 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
 		8E1D5C0FCA0D872C3F21E87F25420681 /* libTZImagePickerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libTZImagePickerController.a; path = libTZImagePickerController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B14D91F238D7FC311697F81F54A815 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
+		9238B7EC4AB89AE285FBBB24F98DFC0A /* Pods-AnyMap-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AnyMap-acknowledgements.plist"; sourceTree = "<group>"; };
 		925F7BD9FE7A16436E81CEAE63911261 /* SDAutoLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDAutoLayout-prefix.pch"; sourceTree = "<group>"; };
 		950B3FE1D895FE2A8310EEA24DC4C4AC /* BMKLocationPoi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BMKLocationPoi.h; path = framework/BMKLocationKit.framework/Headers/BMKLocationPoi.h; sourceTree = "<group>"; };
 		9552A2B3026E539054B1089376FA5DDF /* BMKGeoFenceRegion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BMKGeoFenceRegion.h; path = framework/BMKLocationKit.framework/Headers/BMKGeoFenceRegion.h; sourceTree = "<group>"; };
 		9719E51E1F2CDDCF7316F8ADEB8031F8 /* TZImagePickerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TZImagePickerController-dummy.m"; sourceTree = "<group>"; };
 		985E3A0341E7719256F6C356F6CA1D50 /* UIView+Layout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+Layout.h"; path = "TZImagePickerController/TZImagePickerController/UIView+Layout.h"; sourceTree = "<group>"; };
+		9984285A83679BB51358FF28319CA6B0 /* Pods-AnyMap-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AnyMap-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9A7C4E3B83E5073525198FA7FCE7E744 /* BMKLocationAuth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BMKLocationAuth.h; path = framework/BMKLocationKit.framework/Headers/BMKLocationAuth.h; sourceTree = "<group>"; };
-		9B3D7CD429A9A80B03DE449A57290A34 /* Pods-STUMap2-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STUMap2-resources.sh"; sourceTree = "<group>"; };
 		9CA916F968E75DBFD6718F32162363A5 /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+SDAutoTableViewCellHeight.h"; path = "SDAutoLayoutDemo/SDAutoLayout/UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FE17CCAF48587F1EEA8BEBF7CF1A4E7 /* NSBundle+TZImagePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+TZImagePicker.h"; path = "TZImagePickerController/TZImagePickerController/NSBundle+TZImagePicker.h"; sourceTree = "<group>"; };
@@ -206,16 +208,13 @@
 		A879ED514773EF45498E03DD58D4EA8A /* TZImagePickerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TZImagePickerController.xcconfig; sourceTree = "<group>"; };
 		B975FAEC27B6E0BB102FB507ECF66C9F /* TZGifPhotoPreviewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZGifPhotoPreviewController.m; path = TZImagePickerController/TZImagePickerController/TZGifPhotoPreviewController.m; sourceTree = "<group>"; };
 		B999AA6B304C47EB0EADF27E8BECFED3 /* BaiduMapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BaiduMapKit.xcconfig; sourceTree = "<group>"; };
-		B9B0D4669D5DF1903DA953E9F01A0C08 /* Pods-STUMap2-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-STUMap2-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BF459E69840EF4A5F910780DB6B86C13 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
-		C67ED2B92FC7C0134533D9B1C2A799B7 /* Pods-STUMap2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STUMap2.release.xcconfig"; sourceTree = "<group>"; };
 		C74EFBB39DBB73FACBB17916F1D78B72 /* TZImageCropManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZImageCropManager.m; path = TZImagePickerController/TZImagePickerController/TZImageCropManager.m; sourceTree = "<group>"; };
 		C7500F65DDB21BC28F819E207E3D9FEF /* libssl.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libssl.a; path = BaiduMapKit/thirdlibs/libssl.a; sourceTree = "<group>"; };
 		C7F44BAE8F6C0DFE7DE1B50D58E449E2 /* TZLocationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZLocationManager.h; path = TZImagePickerController/TZImagePickerController/TZLocationManager.h; sourceTree = "<group>"; };
 		CA879DE98842E35521E2FC821051B531 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
 		CD3F32E125A3925548239E08EB7EE515 /* BMKLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BMKLocation.h; path = framework/BMKLocationKit.framework/Headers/BMKLocation.h; sourceTree = "<group>"; };
 		D1A4401A42DCC97FEA384C63CF2AA1D9 /* TZImagePickerController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TZImagePickerController.bundle; path = TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle; sourceTree = "<group>"; };
-		D1B83F21D5A29F733632EBBAC1D74B17 /* Pods-STUMap2-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-STUMap2-dummy.m"; sourceTree = "<group>"; };
 		D341E04C24EC7C893341A415C77F8C5F /* UIView+Layout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+Layout.m"; path = "TZImagePickerController/TZImagePickerController/UIView+Layout.m"; sourceTree = "<group>"; };
 		D5125752EACC231E041515D59FA36BA0 /* TZVideoPlayerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZVideoPlayerController.m; path = TZImagePickerController/TZImagePickerController/TZVideoPlayerController.m; sourceTree = "<group>"; };
 		D75C138DBCE369FDF6154EAF5E8AFD57 /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+SDAutoLayout.m"; path = "SDAutoLayoutDemo/SDAutoLayout/UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
@@ -228,17 +227,25 @@
 		EAA4C9EF3666A6EC14F2F98C54864F97 /* TZPhotoPreviewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZPhotoPreviewCell.h; path = TZImagePickerController/TZImagePickerController/TZPhotoPreviewCell.h; sourceTree = "<group>"; };
 		EE70BE0A61AAE4D2CF3FA1ACF74EB3C9 /* TZAssetModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZAssetModel.m; path = TZImagePickerController/TZImagePickerController/TZAssetModel.m; sourceTree = "<group>"; };
 		EF601689D6DB7D6ADE73843D4290FB1C /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
+		F015B3C06015987E01566AA2DEB23500 /* Pods-AnyMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AnyMap.debug.xcconfig"; sourceTree = "<group>"; };
+		F229C345286BFECB5053D2044392DC5D /* Pods-AnyMap-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AnyMap-resources.sh"; sourceTree = "<group>"; };
 		F9F939B67F876A6A234887C405EE0F1F /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
 		FA3379FCCCD9F4FC5BAF306D6128C991 /* TZImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZImageManager.m; path = TZImagePickerController/TZImagePickerController/TZImageManager.m; sourceTree = "<group>"; };
 		FB860C6EE983D170EA4350AE2BD129A5 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
 		FD09E596D6EDADE1EABDD0CF2C801936 /* BMKLocationKitVersion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BMKLocationKitVersion.h; path = framework/BMKLocationKit.framework/Headers/BMKLocationKitVersion.h; sourceTree = "<group>"; };
-		FD5F09FCC4F6D924DFDEA0115D268D38 /* libPods-STUMap2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-STUMap2.a"; path = "libPods-STUMap2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE19A942936F9E7C935A630279ECCF9 /* NSBundle+TZImagePicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+TZImagePicker.m"; path = "TZImagePickerController/TZImagePickerController/NSBundle+TZImagePicker.m"; sourceTree = "<group>"; };
 		FE903BC622DAD06DF737DE8399B5F4E7 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		01095FBE532CF5AA0855A20BDA54BF0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B4FFDD13D9D589540C64A41D5DAF21F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -259,13 +266,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8BC863DDA626E989D0172DA69C36668 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -276,20 +276,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/BaiduMapKit";
-			sourceTree = "<group>";
-		};
-		0C20DC74B31A189669F0A08587AA1383 /* Pods-STUMap2 */ = {
-			isa = PBXGroup;
-			children = (
-				B9B0D4669D5DF1903DA953E9F01A0C08 /* Pods-STUMap2-acknowledgements.markdown */,
-				6FBDD2D4D0E6A20803E5739DC71250BB /* Pods-STUMap2-acknowledgements.plist */,
-				D1B83F21D5A29F733632EBBAC1D74B17 /* Pods-STUMap2-dummy.m */,
-				9B3D7CD429A9A80B03DE449A57290A34 /* Pods-STUMap2-resources.sh */,
-				5DB23D7A2D35625C1EEADC8316FFAE01 /* Pods-STUMap2.debug.xcconfig */,
-				C67ED2B92FC7C0134533D9B1C2A799B7 /* Pods-STUMap2.release.xcconfig */,
-			);
-			name = "Pods-STUMap2";
-			path = "Target Support Files/Pods-STUMap2";
 			sourceTree = "<group>";
 		};
 		0F2E13F34071EAED0B35441882C5F8BF /* TZImagePickerController */ = {
@@ -388,14 +374,6 @@
 			path = SDAutoLayout;
 			sourceTree = "<group>";
 		};
-		514CB46B267A7F514EAC71279517FC90 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0C20DC74B31A189669F0A08587AA1383 /* Pods-STUMap2 */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		689A01639AFFCFACEC3867359C7B8084 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,23 +383,23 @@
 			path = "../Target Support Files/BMKLocationKit";
 			sourceTree = "<group>";
 		};
-		7A7007831B9F1392CDF445BAAC493522 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1FFED36A657123030ABB700256D73F15 /* libMasonry.a */,
-				FD5F09FCC4F6D924DFDEA0115D268D38 /* libPods-STUMap2.a */,
-				2D24B4853EF5CE5AD7D4FA5E183BD6E2 /* libSDAutoLayout.a */,
-				8E1D5C0FCA0D872C3F21E87F25420681 /* libTZImagePickerController.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		7AD551C47A0962FF5845FE54CBBBCD00 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				D1A4401A42DCC97FEA384C63CF2AA1D9 /* TZImagePickerController.bundle */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		832164994FEA42696FE54A8810E3491F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FFED36A657123030ABB700256D73F15 /* libMasonry.a */,
+				1AFC9D438653D6FC40D88348A4EE80DE /* libPods-AnyMap.a */,
+				2D24B4853EF5CE5AD7D4FA5E183BD6E2 /* libSDAutoLayout.a */,
+				8E1D5C0FCA0D872C3F21E87F25420681 /* libTZImagePickerController.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		83FF64AC2040F671E4BB14A5CA4840F6 /* Resources */ = {
@@ -462,14 +440,36 @@
 			path = BaiduMapKit;
 			sourceTree = "<group>";
 		};
+		B34793388C0D2145421755F5F7225AB0 /* Pods-AnyMap */ = {
+			isa = PBXGroup;
+			children = (
+				9984285A83679BB51358FF28319CA6B0 /* Pods-AnyMap-acknowledgements.markdown */,
+				9238B7EC4AB89AE285FBBB24F98DFC0A /* Pods-AnyMap-acknowledgements.plist */,
+				57312CE8939C3473EADA8C062051CC60 /* Pods-AnyMap-dummy.m */,
+				F229C345286BFECB5053D2044392DC5D /* Pods-AnyMap-resources.sh */,
+				F015B3C06015987E01566AA2DEB23500 /* Pods-AnyMap.debug.xcconfig */,
+				803507D96F3C1178C33DABF880E572A9 /* Pods-AnyMap.release.xcconfig */,
+			);
+			name = "Pods-AnyMap";
+			path = "Target Support Files/Pods-AnyMap";
+			sourceTree = "<group>";
+		};
+		C6713414F1875FAFDD82A8A31805AD71 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B34793388C0D2145421755F5F7225AB0 /* Pods-AnyMap */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
 				E2AABD2AD50290AC90C16CDEA32C001E /* Pods */,
-				7A7007831B9F1392CDF445BAAC493522 /* Products */,
-				514CB46B267A7F514EAC71279517FC90 /* Targets Support Files */,
+				832164994FEA42696FE54A8810E3491F /* Products */,
+				C6713414F1875FAFDD82A8A31805AD71 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -575,7 +575,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EC8C6B51CD4500E33222DE309EF195D4 /* Headers */ = {
+		7CF0CF804887DB4073E26F443BD571A1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -624,6 +624,28 @@
 			productReference = 2D24B4853EF5CE5AD7D4FA5E183BD6E2 /* libSDAutoLayout.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		1ABFBDD632127E9440BA06FCFB04807E /* Pods-AnyMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C449F6E75754C1919FEF873EE9B90A0 /* Build configuration list for PBXNativeTarget "Pods-AnyMap" */;
+			buildPhases = (
+				7CF0CF804887DB4073E26F443BD571A1 /* Headers */,
+				787F772B1C61D20DFC824399A7C9FAB7 /* Sources */,
+				4B4FFDD13D9D589540C64A41D5DAF21F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0703611BAB8A8D57C6578756E4CF0200 /* PBXTargetDependency */,
+				CD330E172054737F8D394692AD37A902 /* PBXTargetDependency */,
+				BE61A2958694494F23685C9BC4F4DD04 /* PBXTargetDependency */,
+				2E5FE61592DCB5221098D528F032EEDB /* PBXTargetDependency */,
+				6EA4E8AA49F09B93EBED0115A030A69A /* PBXTargetDependency */,
+			);
+			name = "Pods-AnyMap";
+			productName = "Pods-AnyMap";
+			productReference = 1AFC9D438653D6FC40D88348A4EE80DE /* libPods-AnyMap.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		55AF53E6C77A10ED4985E04D74A8878E /* Masonry */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B9F7EAACDDA564EC328F53A4AB8CF85 /* Build configuration list for PBXNativeTarget "Masonry" */;
@@ -658,28 +680,6 @@
 			productReference = 8E1D5C0FCA0D872C3F21E87F25420681 /* libTZImagePickerController.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		FB350893CA45B38CDF508B275E1CE833 /* Pods-STUMap2 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C62345498E3D135A38EDFF7E2A86CAF4 /* Build configuration list for PBXNativeTarget "Pods-STUMap2" */;
-			buildPhases = (
-				EC8C6B51CD4500E33222DE309EF195D4 /* Headers */,
-				E05AA914B12AE513E1D4BD7CB089223F /* Sources */,
-				B8BC863DDA626E989D0172DA69C36668 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				88506A659A45F75E8E1CCEF6D3FFE195 /* PBXTargetDependency */,
-				1F8AAC9BE25CE9C2855CBC804668C5CB /* PBXTargetDependency */,
-				999E4214CD9B89CB456A3D6588D5CB25 /* PBXTargetDependency */,
-				E41BC24C8AA8AF3FCD7C210C112BF63F /* PBXTargetDependency */,
-				F279977789B8A0BA7435DE9CD845B0A4 /* PBXTargetDependency */,
-			);
-			name = "Pods-STUMap2";
-			productName = "Pods-STUMap2";
-			productReference = FD5F09FCC4F6D924DFDEA0115D268D38 /* libPods-STUMap2.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -698,14 +698,14 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 7A7007831B9F1392CDF445BAAC493522 /* Products */;
+			productRefGroup = 832164994FEA42696FE54A8810E3491F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				2A98134A70001D88F2E8B45132A3E45D /* BaiduMapKit */,
 				144DA5B6E933224DBAE1FADCD2E3B56D /* BMKLocationKit */,
 				55AF53E6C77A10ED4985E04D74A8878E /* Masonry */,
-				FB350893CA45B38CDF508B275E1CE833 /* Pods-STUMap2 */,
+				1ABFBDD632127E9440BA06FCFB04807E /* Pods-AnyMap */,
 				03932C47FBFD347205B2F367F78E9B63 /* SDAutoLayout */,
 				A96BBB982D62BB807B5BD10774BE2D07 /* TZImagePickerController */,
 			);
@@ -733,6 +733,14 @@
 				9C074BEAD9BB402E347FBF907406283B /* TZProgressView.m in Sources */,
 				6BB7094445C9DB9773975EBE49D43397 /* TZVideoPlayerController.m in Sources */,
 				115A769A612096609E0531A210EA25DA /* UIView+Layout.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		787F772B1C61D20DFC824399A7C9FAB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81697D53FF46C94368E235CAFBBDBEBD /* Pods-AnyMap-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,46 +772,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E05AA914B12AE513E1D4BD7CB089223F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DF36CC4C673B32E3D2564C3AED51C294 /* Pods-STUMap2-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1F8AAC9BE25CE9C2855CBC804668C5CB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = BaiduMapKit;
-			target = 2A98134A70001D88F2E8B45132A3E45D /* BaiduMapKit */;
-			targetProxy = 4186112E9D3D69B2AFD3EC3A12C7A420 /* PBXContainerItemProxy */;
-		};
-		88506A659A45F75E8E1CCEF6D3FFE195 /* PBXTargetDependency */ = {
+		0703611BAB8A8D57C6578756E4CF0200 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BMKLocationKit;
 			target = 144DA5B6E933224DBAE1FADCD2E3B56D /* BMKLocationKit */;
-			targetProxy = 5E9B05D3A96CD2D5B2908D3C401D2159 /* PBXContainerItemProxy */;
+			targetProxy = EADE07E0702FE3D688C07FC3ECB7EB13 /* PBXContainerItemProxy */;
 		};
-		999E4214CD9B89CB456A3D6588D5CB25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Masonry;
-			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
-			targetProxy = 0F29F14CEF5957929AD162C590EC2A69 /* PBXContainerItemProxy */;
-		};
-		E41BC24C8AA8AF3FCD7C210C112BF63F /* PBXTargetDependency */ = {
+		2E5FE61592DCB5221098D528F032EEDB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SDAutoLayout;
 			target = 03932C47FBFD347205B2F367F78E9B63 /* SDAutoLayout */;
-			targetProxy = 25F70DC99B0AB3BD426A47665377E15E /* PBXContainerItemProxy */;
+			targetProxy = 10ECF297195B570C4F0A37902DE715CD /* PBXContainerItemProxy */;
 		};
-		F279977789B8A0BA7435DE9CD845B0A4 /* PBXTargetDependency */ = {
+		6EA4E8AA49F09B93EBED0115A030A69A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TZImagePickerController;
 			target = A96BBB982D62BB807B5BD10774BE2D07 /* TZImagePickerController */;
-			targetProxy = A733A4B98E4880E6F68912BBD978D822 /* PBXContainerItemProxy */;
+			targetProxy = 7D7A674CC51F7EFA76462C49A0CA8476 /* PBXContainerItemProxy */;
+		};
+		BE61A2958694494F23685C9BC4F4DD04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
+			targetProxy = 285AF25F5B7D7D13B2B799CC5DB94F2E /* PBXContainerItemProxy */;
+		};
+		CD330E172054737F8D394692AD37A902 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BaiduMapKit;
+			target = 2A98134A70001D88F2E8B45132A3E45D /* BaiduMapKit */;
+			targetProxy = 1409D078F0B85515A8278510A21F3B28 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -908,9 +908,9 @@
 			};
 			name = Release;
 		};
-		49FAFE542A3B51AFB24BE5AE020CDF8E /* Release */ = {
+		397C3A277DA4C405D9A49876A3FBDDC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C67ED2B92FC7C0134533D9B1C2A799B7 /* Pods-STUMap2.release.xcconfig */;
+			baseConfigurationReference = F015B3C06015987E01566AA2DEB23500 /* Pods-AnyMap.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -927,9 +927,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		5C087208946BB4786FB8EBF08E34DC6B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1000,9 +999,9 @@
 			};
 			name = Debug;
 		};
-		7897EED336308526A269C29A28943022 /* Debug */ = {
+		B7053D714FEBE151CA476E77D3BCE337 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DB23D7A2D35625C1EEADC8316FFAE01 /* Pods-STUMap2.debug.xcconfig */;
+			baseConfigurationReference = 803507D96F3C1178C33DABF880E572A9 /* Pods-AnyMap.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1019,8 +1018,9 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
 		CB150244C7B113D24584F1A92F7ED8DF /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1205,6 +1205,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		1C449F6E75754C1919FEF873EE9B90A0 /* Build configuration list for PBXNativeTarget "Pods-AnyMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				397C3A277DA4C405D9A49876A3FBDDC9 /* Debug */,
+				B7053D714FEBE151CA476E77D3BCE337 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3280B1A81AE459F1311E2522782BA77C /* Build configuration list for PBXAggregateTarget "BMKLocationKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1237,15 +1246,6 @@
 			buildConfigurations = (
 				5C087208946BB4786FB8EBF08E34DC6B /* Debug */,
 				E7DAB184F48395552115A88D796915EE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C62345498E3D135A38EDFF7E2A86CAF4 /* Build configuration list for PBXNativeTarget "Pods-STUMap2" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7897EED336308526A269C29A28943022 /* Debug */,
-				49FAFE542A3B51AFB24BE5AE020CDF8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

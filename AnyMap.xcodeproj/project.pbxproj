@@ -14,8 +14,8 @@
 		4C7DE1FA23614D1F00C444C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C7DE1F923614D1F00C444C2 /* Assets.xcassets */; };
 		4C7DE1FD23614D1F00C444C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7DE1FB23614D1F00C444C2 /* LaunchScreen.storyboard */; };
 		4C7DE20023614D1F00C444C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE1FF23614D1F00C444C2 /* main.m */; };
-		4C7DE20A23614D1F00C444C2 /* STUMap2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE20923614D1F00C444C2 /* STUMap2Tests.m */; };
-		4C7DE21523614D1F00C444C2 /* STUMap2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE21423614D1F00C444C2 /* STUMap2UITests.m */; };
+		4C7DE20A23614D1F00C444C2 /* AnyMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE20923614D1F00C444C2 /* AnyMapTests.m */; };
+		4C7DE21523614D1F00C444C2 /* AnyMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE21423614D1F00C444C2 /* AnyMapTests.m */; };
 		4C7DE43B2364994B00C444C2 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE4382364994A00C444C2 /* UIView+Size.m */; };
 		4C7DE43C2364994B00C444C2 /* SlideScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE4392364994B00C444C2 /* SlideScrollView.m */; };
 		4C7DE44323649F9F00C444C2 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE44123649F9F00C444C2 /* PlaceholderTextView.m */; };
@@ -26,7 +26,7 @@
 		4C7DE45B2365909500C444C2 /* StoryPointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE4592365909500C444C2 /* StoryPointModel.m */; };
 		4C7DE45C2365909500C444C2 /* StoryPointModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE45A2365909500C444C2 /* StoryPointModel+CoreDataProperties.m */; };
 		4C7DE4652365BD5300C444C2 /* SCBMKPointAnnotationSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE4642365BD5300C444C2 /* SCBMKPointAnnotationSubClass.m */; };
-		8BDDEF25761A6CACC54DE16B /* libPods-STUMap2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A865330BB0BC076DDDFAC871 /* libPods-STUMap2.a */; };
+		FE5F65589127F00FB65EAFC3 /* libPods-AnyMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7390F33F54ECAAD384E3EE79 /* libPods-AnyMap.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +61,10 @@
 		4C7DE1FE23614D1F00C444C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C7DE1FF23614D1F00C444C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4C7DE20523614D1F00C444C2 /* AnyMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnyMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C7DE20923614D1F00C444C2 /* STUMap2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STUMap2Tests.m; sourceTree = "<group>"; };
+		4C7DE20923614D1F00C444C2 /* AnyMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnyMapTests.m; sourceTree = "<group>"; };
 		4C7DE20B23614D1F00C444C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C7DE21023614D1F00C444C2 /* AnyMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnyMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C7DE21423614D1F00C444C2 /* STUMap2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STUMap2UITests.m; sourceTree = "<group>"; };
+		4C7DE21423614D1F00C444C2 /* AnyMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnyMapTests.m; sourceTree = "<group>"; };
 		4C7DE21623614D1F00C444C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C7DE4372364994A00C444C2 /* SlideScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideScrollView.h; sourceTree = "<group>"; };
 		4C7DE4382364994A00C444C2 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
@@ -86,7 +86,9 @@
 		4C7DE4632365BD5300C444C2 /* SCBMKPointAnnotationSubClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCBMKPointAnnotationSubClass.h; sourceTree = "<group>"; };
 		4C7DE4642365BD5300C444C2 /* SCBMKPointAnnotationSubClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCBMKPointAnnotationSubClass.m; sourceTree = "<group>"; };
 		517CE2F3308207B1F2669D2B /* Pods-STUMap2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STUMap2.debug.xcconfig"; path = "Target Support Files/Pods-STUMap2/Pods-STUMap2.debug.xcconfig"; sourceTree = "<group>"; };
-		A865330BB0BC076DDDFAC871 /* libPods-STUMap2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-STUMap2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7390F33F54ECAAD384E3EE79 /* libPods-AnyMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AnyMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9403B514662846D5AAAD455E /* Pods-AnyMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnyMap.release.xcconfig"; path = "Target Support Files/Pods-AnyMap/Pods-AnyMap.release.xcconfig"; sourceTree = "<group>"; };
+		EF2BD68AFDF6F5F5E2C82805 /* Pods-AnyMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnyMap.debug.xcconfig"; path = "Target Support Files/Pods-AnyMap/Pods-AnyMap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BDDEF25761A6CACC54DE16B /* libPods-STUMap2.a in Frameworks */,
+				FE5F65589127F00FB65EAFC3 /* libPods-AnyMap.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +120,7 @@
 		49E7B901746CD91BDD87E0E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A865330BB0BC076DDDFAC871 /* libPods-STUMap2.a */,
+				7390F33F54ECAAD384E3EE79 /* libPods-AnyMap.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -142,9 +144,9 @@
 		4C7DE1E123614D1700C444C2 = {
 			isa = PBXGroup;
 			children = (
-				4C7DE1EC23614D1700C444C2 /* STUMap2 */,
-				4C7DE20823614D1F00C444C2 /* STUMap2Tests */,
-				4C7DE21323614D1F00C444C2 /* STUMap2UITests */,
+				4C7DE1EC23614D1700C444C2 /* AnyMap */,
+				4C7DE20823614D1F00C444C2 /* AnyMapTests */,
+				4C7DE21323614D1F00C444C2 /* AnyMapUITests */,
 				4C7DE1EB23614D1700C444C2 /* Products */,
 				5FB2CEC3D0F9B0DFD541754C /* Pods */,
 				49E7B901746CD91BDD87E0E9 /* Frameworks */,
@@ -161,7 +163,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4C7DE1EC23614D1700C444C2 /* STUMap2 */ = {
+		4C7DE1EC23614D1700C444C2 /* AnyMap */ = {
 			isa = PBXGroup;
 			children = (
 				4C79BB2C2380240300DB08EB /* Story */,
@@ -185,25 +187,25 @@
 				4C7DE4632365BD5300C444C2 /* SCBMKPointAnnotationSubClass.h */,
 				4C7DE4642365BD5300C444C2 /* SCBMKPointAnnotationSubClass.m */,
 			);
-			path = STUMap2;
+			path = AnyMap;
 			sourceTree = "<group>";
 		};
-		4C7DE20823614D1F00C444C2 /* STUMap2Tests */ = {
+		4C7DE20823614D1F00C444C2 /* AnyMapTests */ = {
 			isa = PBXGroup;
 			children = (
-				4C7DE20923614D1F00C444C2 /* STUMap2Tests.m */,
+				4C7DE20923614D1F00C444C2 /* AnyMapTests.m */,
 				4C7DE20B23614D1F00C444C2 /* Info.plist */,
 			);
-			path = STUMap2Tests;
+			path = AnyMapTests;
 			sourceTree = "<group>";
 		};
-		4C7DE21323614D1F00C444C2 /* STUMap2UITests */ = {
+		4C7DE21323614D1F00C444C2 /* AnyMapUITests */ = {
 			isa = PBXGroup;
 			children = (
-				4C7DE21423614D1F00C444C2 /* STUMap2UITests.m */,
+				4C7DE21423614D1F00C444C2 /* AnyMapTests.m */,
 				4C7DE21623614D1F00C444C2 /* Info.plist */,
 			);
-			path = STUMap2UITests;
+			path = AnyMapUITests;
 			sourceTree = "<group>";
 		};
 		4C7DE43D236499B300C444C2 /* BottomSlideView */ = {
@@ -237,6 +239,8 @@
 			children = (
 				517CE2F3308207B1F2669D2B /* Pods-STUMap2.debug.xcconfig */,
 				3EB21340DE6ED6F0DEAE0766 /* Pods-STUMap2.release.xcconfig */,
+				EF2BD68AFDF6F5F5E2C82805 /* Pods-AnyMap.debug.xcconfig */,
+				9403B514662846D5AAAD455E /* Pods-AnyMap.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -384,7 +388,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-STUMap2-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AnyMap-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -397,15 +401,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-STUMap2/Pods-STUMap2-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AnyMap/Pods-AnyMap-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-STUMap2/Pods-STUMap2-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AnyMap/Pods-AnyMap-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-STUMap2/Pods-STUMap2-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnyMap/Pods-AnyMap-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -436,7 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C7DE20A23614D1F00C444C2 /* STUMap2Tests.m in Sources */,
+				4C7DE20A23614D1F00C444C2 /* AnyMapTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C7DE21523614D1F00C444C2 /* STUMap2UITests.m in Sources */,
+				4C7DE21523614D1F00C444C2 /* AnyMapTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,22 +599,22 @@
 		};
 		4C7DE21A23614D1F00C444C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 517CE2F3308207B1F2669D2B /* Pods-STUMap2.debug.xcconfig */;
+			baseConfigurationReference = EF2BD68AFDF6F5F5E2C82805 /* Pods-AnyMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q58XYJ7VA6;
-				INFOPLIST_FILE = STUMap2/Info.plist;
+				INFOPLIST_FILE = AnyMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/STUMap2/iOSDemo/Jpush-Demo/Pods/JCore",
-					"$(PROJECT_DIR)/STUMap2/iOSDemo/Jpush-Demo/Pods/JPush",
+					"$(PROJECT_DIR)/AnyMap/iOSDemo/Jpush-Demo/Pods/JCore",
+					"$(PROJECT_DIR)/AnyMap/iOSDemo/Jpush-Demo/Pods/JPush",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hwl.STUMap2;
+				PRODUCT_BUNDLE_IDENTIFIER = hwl.AnyMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -618,22 +622,22 @@
 		};
 		4C7DE21B23614D1F00C444C2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EB21340DE6ED6F0DEAE0766 /* Pods-STUMap2.release.xcconfig */;
+			baseConfigurationReference = 9403B514662846D5AAAD455E /* Pods-AnyMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q58XYJ7VA6;
-				INFOPLIST_FILE = STUMap2/Info.plist;
+				INFOPLIST_FILE = AnyMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/STUMap2/iOSDemo/Jpush-Demo/Pods/JCore",
-					"$(PROJECT_DIR)/STUMap2/iOSDemo/Jpush-Demo/Pods/JPush",
+					"$(PROJECT_DIR)/AnyMap/iOSDemo/Jpush-Demo/Pods/JCore",
+					"$(PROJECT_DIR)/AnyMap/iOSDemo/Jpush-Demo/Pods/JPush",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hwl.STUMap2;
+				PRODUCT_BUNDLE_IDENTIFIER = hwl.AnyMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -644,14 +648,14 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = STUMap2Tests/Info.plist;
+				INFOPLIST_FILE = AnyMapTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hwl.STUMap2Tests;
+				PRODUCT_BUNDLE_IDENTIFIER = hwl.AnyMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnyMap.app/AnyMap";
@@ -663,14 +667,14 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = STUMap2Tests/Info.plist;
+				INFOPLIST_FILE = AnyMapTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hwl.STUMap2Tests;
+				PRODUCT_BUNDLE_IDENTIFIER = hwl.AnyMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnyMap.app/AnyMap";
@@ -681,16 +685,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = STUMap2UITests/Info.plist;
+				INFOPLIST_FILE = AnyMapUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hwl.STUMap2UITests;
+				PRODUCT_BUNDLE_IDENTIFIER = hwl.AnyMapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = STUMap2;
+				TEST_TARGET_NAME = AnyMap;
 			};
 			name = Debug;
 		};
@@ -698,16 +702,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = STUMap2UITests/Info.plist;
+				INFOPLIST_FILE = AnyMapUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hwl.STUMap2UITests;
+				PRODUCT_BUNDLE_IDENTIFIER = hwl.AnyMapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = STUMap2;
+				TEST_TARGET_NAME = AnyMap;
 			};
 			name = Release;
 		};
