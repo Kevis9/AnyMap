@@ -11,7 +11,7 @@
 #import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
 #import <BMKLocationKit/BMKLocationComponent.h>
 #import <BaiduMapAPI_Search/BMKSearchComponent.h> //引入地理编码
-#import "SlideScrollView.h"
+#import "AMStoryBottomSlideView.h"
 #import "StoryPaopaoView.h"
 #import "CoreDataManager.h"
 #import "SCBMKPointAnnotationSubClass.h"
@@ -19,7 +19,7 @@
 
 @interface ViewController ()<BMKLocationManagerDelegate,
                              BMKMapViewDelegate,
-                             SlideScrollViewDelegate,
+                             AMStoryBottomViewDelegate,
                              TZImagePickerControllerDelegate,
                              BMKGeoCodeSearchDelegate>
 
@@ -29,7 +29,7 @@
 
 @property(nonatomic,strong) BMKLocationManager *locationManager;
 
-@property(nonatomic,strong) SlideScrollView *bottomSlideView;
+@property(nonatomic,strong) AMStoryBottomSlideView *bottomSlideView;
 
 @property(nonatomic,strong) SCBMKPointAnnotationSubClass *currentPoint;
 
@@ -139,7 +139,7 @@
     //长按之后底部的slideview会被更换
     if(self.bottomSlideView)
         [self.bottomSlideView removeFromSuperview];
-    self.bottomSlideView = [[SlideScrollView alloc] initWithFrame:self.view.bounds];
+    self.bottomSlideView = [[AMStoryBottomSlideView alloc] initWithFrame:self.view.bounds];
     self.bottomSlideView.delegate = self;
     [self.view addSubview:self.bottomSlideView];
     BOOL flag = [geoCodeSearch reverseGeoCode:reverseGeoCodeOption];
@@ -259,7 +259,7 @@
 }
 
 #pragma mark -SlideView Delgate
-- (void)addStoryPoint:(SlideScrollView *)slideview{
+- (void)addStoryPoint:(AMStoryBottomSlideView *)slideview{
     //进行存储操作
     NSMutableDictionary *dic;
     dic = [[NSMutableDictionary alloc] init];
