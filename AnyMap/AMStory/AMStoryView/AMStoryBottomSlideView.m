@@ -26,7 +26,7 @@
 
 @property (nonatomic, strong) UITableViewCell *tmpCell;     //暂时代表放置图片的cell
 
-@property (nonatomic, strong) UIButton *tmpBtn;             //暂时代表图片添加按钮
+@property (nonatomic, strong) UIButton *addImgBtn;          //添加图片Btn
 @end
 
 @implementation AMStoryBottomSlideView
@@ -167,89 +167,92 @@
         
         //设置不可点击
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 112, 120)];
-        btn.backgroundColor = [UIColor whiteColor];
-        [btn setImage:[UIImage imageNamed:@"添加"] forState:UIControlStateNormal];
-        btn.layer.cornerRadius = 8.0f;
-        [btn addTarget:self action:@selector(addImgs:) forControlEvents:UIControlEventTouchUpInside];
-      
-        [cell.contentView addSubview:btn];
-        
+        [cell.contentView addSubview:self.addImgBtn];
         //btn布局
-        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.addImgBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(cell.contentView.mas_top).offset(15).priority(999);
             make.height.mas_greaterThanOrEqualTo(120).priority(888);
             make.bottom.equalTo(cell.contentView.mas_bottom).offset(-15).priority(777);
             make.left.equalTo(cell.contentView.mas_left).offset(22);
             make.right.equalTo(cell.contentView.mas_right).offset(-280);
         }];
-        
-        //给btn添加虚线
-        CAShapeLayer *layer = [[CAShapeLayer alloc] init];
-        layer.frame = CGRectMake(0,0,btn.frame.size.width,btn.frame.size.height);
-        layer.backgroundColor = [UIColor clearColor].CGColor;
-
-        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:layer.frame cornerRadius:8];
-        layer.path = path.CGPath;
-        layer.lineWidth = 2.0f;
-        layer.lineDashPattern = @[@5, @5];
-        layer.fillColor = [UIColor clearColor].CGColor;
-        //虚线的颜色
-        layer.strokeColor = [UIColor colorWithRed:171/255.0 green:170/255.0 blue:170/255.0 alpha:1].CGColor;
-        [btn.layer addSublayer:layer];
         self.tmpCell = cell;
-        
         return cell;
     }
     return nil;
 }
 
-#pragma mark - 添加图片btn
+#pragma mark - 添加图片
+
+- (void)updateHeightofImgRow:(NSArray<UIImage*> *)imgs{
+    //更新图片选择的row
+    //更新时,去掉原来的imageview
+    for(UIView *view in [self.tmpCell subviews])
+    {
+        if([view isKindOfClass:[UIImageView class]])
+        {
+            [view removeFromSuperview];
+        }
+    }
+    //如果需要更新的图片数为0 则直接退出
+    if([imgs count]==0)
+    {
+        [self updateConstraints];
+        return;
+    }
+        
+    if(self.numOfImgs == 0)
+    {
+        self.firstImg = imgs[0]; //存储九宫格的第一张图
+    }
+    //更新时,去掉原来的imageview
+    for(UIView *view in [self.tmpCell subviews])
+    {
+        if([view isKindOfClass:[UIImageView class]])
+        {
+            [view removeFromSuperview];
+        }
+    }    
+    //添加完图片,获得新的图片,对Cell进行布局
+    for(int i=0;i<[imgs count];i++)
+    {
+        //创建UIimageview
+        UIImageView *imgView = [[UIImageView alloc] initWithImage:imgs[i]];
+        imgView.layer.cornerRadius = 8;
+        [self.tmpCell addSubview:imgView];
+        //当前图片所在的位置
+        NSInteger index = i;
+        [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+            //根据当前的index来计算其布局约束
+            make.top.equalTo(self.tmpCell.contentView.mas_top).offset((index/3)*129+15);
+        make.bottom.equalTo(self.tmpCell.contentView.mas_bottom).offset(-(2-(index/3)*129+15));
+            make.left.equalTo(self.tmpCell.contentView.mas_left).offset((index%3)*129+22);
+          make.right.equalTo(self.tmpCell.contentView.mas_right).offset(-(2-(index%3)*129+22));
+
+            //布置图片的大小
+            make.height.lessThanOrEqualTo(@120);
+            make.width.lessThanOrEqualTo(@112);
+        }];
+    }//for
+    // 更新图片数量
+    self.numOfImgs = [imgs count];
+    if(self.numOfImgs>=9)
+    {
+        self.addImgBtn.hidden = YES;
+    }
+    else{
+        [self updateConstraints];
+    }
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+    
+}
+
 //添加图片
 - (void)addImgs:(UIButton*)btn{
     
-    self.tmpBtn = btn;
     [self.delegate pickImgFinishedHandle:^(NSArray * _Nonnull imgs) {
-
-        if(self.numOfImgs == 0)
-        {
-            self.firstImg = imgs[0]; //存储九宫格的第一张图
-        }
-        //添加完图片,获得新的图片,对Cell进行布局
-        for(int i=0;i<[imgs count];i++)
-        {
-            //创建UIimageview
-            UIImageView *imgView = [[UIImageView alloc] initWithImage:imgs[i]];
-            imgView.layer.cornerRadius = 8;
-            [self.tmpCell addSubview:imgView];
-            //当前图片所在的位置
-            NSInteger index = self.numOfImgs+i;
-            [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-                //根据当前的index来计算其布局约束
-                make.top.equalTo(self.tmpCell.contentView.mas_top).offset((index/3)*129+15);
-            make.bottom.equalTo(self.tmpCell.contentView.mas_bottom).offset(-(2-(index/3)*129+15));
-                make.left.equalTo(self.tmpCell.contentView.mas_left).offset((index%3)*129+22);
-              make.right.equalTo(self.tmpCell.contentView.mas_right).offset(-(2-(index%3)*129+22));
-
-                //布置图片的大小
-                make.height.lessThanOrEqualTo(@120);
-                make.width.lessThanOrEqualTo(@112);
-            }];
-        }//for
-        // 更新图片数量
-        self.numOfImgs += [imgs count];
-        if(self.numOfImgs>=9)
-        {
-            self.tmpBtn.hidden = YES;
-        }
-        else{
-            self.tmpBtn = btn;
-            [self updateConstraints];
-        }
-
-        [self.tableView beginUpdates];
-        [self.tableView endUpdates];
+        [self updateHeightofImgRow:imgs];
     }];
     
 }
@@ -257,9 +260,11 @@
 //更新btn约束
 //图片添加完成之后，需要更新虚线btn的约束，从而实现cell高度自适应
 - (void)updateConstraints{
+    if(!self.tmpCell)
+        return;
     NSInteger index = self.numOfImgs;
     //更新btn布局
-    [self.tmpBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+    [self.addImgBtn mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.tmpCell.contentView.mas_top).offset((index/3)*129+15);
     make.bottom.equalTo(self.tmpCell.contentView.mas_bottom).offset(-15);
 
@@ -279,7 +284,7 @@
 
 #pragma mark -添加故事点
 
-- (void) addPoint:(UIButton*)btn{
+- (void)addPoint:(UIButton*)btn{
     
     if([self.delegate respondsToSelector:@selector(addStoryPoint:)])
         [self.delegate addStoryPoint:self];
@@ -370,7 +375,31 @@
         _addressLabel.font = [UIFont boldSystemFontOfSize:18];
     }
     return _addressLabel;
-    
+}
+
+- (UIButton *)addImgBtn{
+    if(!_addImgBtn)
+    {
+        _addImgBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 112, 120)];
+        _addImgBtn.backgroundColor = [UIColor whiteColor];
+        [_addImgBtn setImage:[UIImage imageNamed:@"添加"] forState:UIControlStateNormal];
+       _addImgBtn.layer.cornerRadius = 8.0f;
+        [_addImgBtn addTarget:self action:@selector(addImgs:) forControlEvents:UIControlEventTouchUpInside];
+        //给btn添加虚线
+        CAShapeLayer *layer = [[CAShapeLayer alloc] init];
+        layer.frame = CGRectMake(0,0,_addImgBtn.frame.size.width,_addImgBtn.frame.size.height);
+        layer.backgroundColor = [UIColor clearColor].CGColor;
+
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:layer.frame cornerRadius:8];
+        layer.path = path.CGPath;
+        layer.lineWidth = 2.0f;
+        layer.lineDashPattern = @[@5, @5];
+        layer.fillColor = [UIColor clearColor].CGColor;
+        //虚线的颜色
+        layer.strokeColor = [UIColor colorWithRed:171/255.0 green:170/255.0 blue:170/255.0 alpha:1].CGColor;
+        [_addImgBtn.layer addSublayer:layer];
+    }
+    return _addImgBtn;
 }
 @end
 

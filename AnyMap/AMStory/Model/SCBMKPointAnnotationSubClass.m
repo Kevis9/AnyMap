@@ -10,4 +10,13 @@
 
 @implementation SCBMKPointAnnotationSubClass
 
+
+#pragma mark -Lazy loading
+- (NSMutableArray<UIImage *> *)imgs{
+    if(!_imgs)
+    {
+        _imgs = [[NSMutableArray alloc] init];
+    }
+    return _imgs;    
+}
 @end

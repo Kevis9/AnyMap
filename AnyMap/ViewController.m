@@ -40,12 +40,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
     self.mapView.userTrackingMode = BMKUserTrackingModeFollow;
-    [self.mapView setZoomLevel:17];
     
+    [self.mapView setZoomLevel:17];
     [self.locationManager startUpdatingLocation];
     [self.locationManager startUpdatingHeading];
     
@@ -153,7 +153,7 @@
     }
     
     //使用子类来记录该点的ID---结合Coredata
-    SCBMKPointAnnotationSubClass* annotation = [[SCBMKPointAnnotationSubClass alloc]init];
+    SCBMKPointAnnotationSubClass* annotation = [[SCBMKPointAnnotationSubClass alloc] init];
     annotation.coordinate = coordinate;
     annotation.createdtime = [NSDate date];
     
@@ -179,7 +179,7 @@
     [self updateCurrentBottomSlideView];
     
     //更新PaoPaoview
-    ((StoryPaopaoView*)view.paopaoView.subviews[0]).titleLabel.text = self.currentPoint.title;
+    ((StoryPaopaoView*)view.paopaoView.subviews[0]).titleLabel.text = self.currentPoint.StoryTitle;
     ((StoryPaopaoView*)view.paopaoView.subviews[0]).storyLabel.text = self.currentPoint.content;
     if(self.bottomSlideView.firstImg)
     {
@@ -192,7 +192,7 @@
 - (void)updateCurrentPoint{
     
     //由于故事的编辑都在bottomview中进行，所以当发生点的切换或者添加时，当前点的信息要进行更新
-    self.currentPoint.title = self.bottomSlideView.TitleTextView.text;
+    self.currentPoint.StoryTitle = self.bottomSlideView.TitleTextView.text;
     self.currentPoint.content = self.bottomSlideView.StoryTextView.text;
     self.currentPoint.address = self.bottomSlideView.addressLabel.text;
     
@@ -201,10 +201,13 @@
 - (void)updateCurrentBottomSlideView{
     
     //发生点切换或者添加时，底部的SlideView要发生更新,内容为切换后的点或者新添加的点
-    self.bottomSlideView.TitleTextView.text = self.currentPoint.title;
+    self.bottomSlideView.TitleTextView.text = self.currentPoint.StoryTitle;
     self.bottomSlideView.StoryTextView.text = self.currentPoint.content;
     self.bottomSlideView.addressLabel.text = self.currentPoint.address;
     
+    //更新图片
+    self.bottomSlideView.numOfImgs = [self.currentPoint.imgs count];
+    [self.bottomSlideView updateHeightofImgRow:self.currentPoint.imgs];
 }
 
 #pragma mark - BMKLocationManagerDelegate
@@ -279,30 +282,73 @@
     
     //存储成功之后记录该点的ID
     self.currentPoint.pointID = [[CoreDataManager sharedInstance] createStoryPoint:dic];
-    if(self.currentPoint.pointID)
+    BOOL result = YES;
+    
+    NSArray *paths =NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString *fileDoc = [[self.currentPoint.pointID URIRepresentation] absoluteString];
+    //处理fileDoc,去掉/ 和 :以及空格
+    fileDoc = [fileDoc stringByReplacingOccurrencesOfString:@"/" withString:@""];
+    fileDoc = [fileDoc stringByReplacingOccurrencesOfString:@":" withString:@""];
+    fileDoc = [fileDoc stringByReplacingOccurrencesOfString:@" " withString:@""];
+    //处理完成之后获得单个故事点的ID
+    NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:
+           [NSString stringWithFormat:@"%@",fileDoc]];
+    //判断目录是否存在
+    NSFileManager *filemanager = [NSFileManager defaultManager];
+    bool isdir;
+    bool exist = [filemanager fileExistsAtPath:filePath isDirectory:&isdir];
+    if(!(exist==YES&&isdir==YES))
+    {
+        //当目录不存在时--创建目录
+        [filemanager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    else {
+        //目录存在,删除目录即目录里面的文件
+        [filemanager removeItemAtPath:filePath error:nil];
+        //重新创建
+        [filemanager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    for(int i=0;i<[self.currentPoint.imgs count];i++)
+    {
+        NSString *imgPath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@"img%d.png",i]];
+        result =[UIImagePNGRepresentation(self.currentPoint.imgs[i])writeToFile:imgPath atomically:YES];
+        if (result == YES) {
+            NSLog(@"保存成功");
+        }
+        else break;
+    }
+    if(self.currentPoint.pointID&&result)
     {
         NSLog(@"addStoryPoint----存储成功");
+        
     }
     else
     {
         NSLog(@"addStoryPoint----存储失败");
     }
+    
 }
 
+//选择图片
 - (void)pickImgFinishedHandle:(CellPickImgCopleteblock)block{
     
-    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9-self.bottomSlideView.numOfImgs delegate:self];
+    TZImagePickerController *imagePickerVC = [[TZImagePickerController alloc] initWithMaxImagesCount:9-self.bottomSlideView.numOfImgs delegate:self];
     // You can get the photos by block, the same as by delegate.
     // 你可以通过block或者代理，来得到用户选择的照片.
-    [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
+    // 设置语言
+    imagePickerVC.preferredLanguage = @"zh-Hans";
+    [imagePickerVC setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
         NSLog(@"图片选择完啦!");
         if(block)
         {
-            block(photos);
+            //将图片保存到当前点
+            [self.currentPoint.imgs addObjectsFromArray:photos];
+            block(self.currentPoint.imgs);
         }
     }];
     
-    [self presentViewController:imagePickerVc animated:YES completion:nil];
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
+    
 }
 #pragma mark - Lazy loading
 

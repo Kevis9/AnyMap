@@ -20,10 +20,14 @@ NS_ASSUME_NONNULL_BEGIN
 //点的信息
 @property (nullable, nonatomic, copy) NSString *content;
 @property (nullable, nonatomic, copy) NSDate *createdtime;
-@property (nullable, nonatomic, copy) NSString *title;
-@property (nullable, nonatomic, copy) NSString *address;
+@property (nonatomic, copy) NSString *StoryTitle;
+@property (nonatomic, copy) NSString *address;
 
+//内存上存放的照片数量
+@property (nonatomic,strong)NSMutableArray<UIImage*> *imgs;
 
+//保存已存放点的图片路径===暂时不用
+@property (nonatomic,strong)NSMutableArray<NSString*> *imgURLs;
 @end
 
 NS_ASSUME_NONNULL_END
