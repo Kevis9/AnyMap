@@ -15,6 +15,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong)NSManagedObjectID *pointID;
 
+@property(nonatomic,assign)NSInteger index; //所在下标--存放在storyPoints数组
+
+//点的信息
+@property (nullable, nonatomic, copy) NSString *content;
+@property (nullable, nonatomic, copy) NSDate *createdtime;
+@property (nullable, nonatomic, copy) NSString *title;
+@property (nullable, nonatomic, copy) NSString *address;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

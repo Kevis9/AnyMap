@@ -52,19 +52,10 @@
     [self.tableView registerClass:[EditStoryTableViewCell class] forCellReuseIdentifier:@"cellWithStory"];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cellWithBtn"];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cellWithImg"];
-    
-    
-//    //监听Textview是否发生变化，若变化则应变为Full模式
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(AdjustHeightFull) name:@"TextViewChange" object:nil];
-    
+
     
 }
 
-
-//#pragma mark - TextView 调整self高度
-//-(void)AdjustHeightFull{
-//    [self setSizeState:SlideScrollViewStateFull];
-//}
 
 #pragma mark - TableView DataSource
 

@@ -64,7 +64,6 @@
     iconView.layer.cornerRadius = 2.5;
     [self addSubview:iconView];
     
-    //[self addSubview:self.searchBar];
     [self addSubview:self.tableView];
     
     //监听键盘事件
@@ -107,19 +106,6 @@
         targetContentOffset->x = scrollView.contentOffset.x;
         targetContentOffset->y = scrollView.contentOffset.y;
     }
-}
-
-#pragma mark - UISearchBarDelegate
-
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    [self setSizeState:SlideScrollViewStateFull];
-    [searchBar setShowsCancelButton:YES animated:YES];
-}
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    [searchBar resignFirstResponder];
-    [searchBar setShowsCancelButton:NO animated:YES];
-    [self setSizeState:SlideScrollViewStateSmall];
 }
 
 #pragma mark - Event
@@ -225,16 +211,6 @@
         
     }
     return _tableView;
-}
-
-- (UISearchBar *)searchBar {
-    if (_searchBar == nil) {
-        _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(5, 10, self.width - 10, 50)];
-        _searchBar.searchBarStyle = UISearchBarStyleMinimal;
-        _searchBar.delegate = self;
-        [_searchBar addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureHandle:)]];
-    }
-    return _searchBar;
 }
 
 - (UIView *)shadeView {

@@ -1,19 +1,16 @@
 //
-//  StoryPointModel+CoreDataProperties.h
-//  
+//  StoryPointModel.h
+//  AnyMap
 //
 //  Created by hwl on 2019/11/17.
-//
+//  Copyright © 2019 hwl. All rights reserved.
 //
 
-#import "StoryPointModel+CoreDataClass.h"
-
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface StoryPointModel (CoreDataProperties)
-
-+ (NSFetchRequest<StoryPointModel *> *)fetchRequest;
+@interface AMStoryPointModel : NSObject
 
 @property (nullable, nonatomic, copy) NSString *content;
 @property (nullable, nonatomic, copy) NSDate *createdtime;

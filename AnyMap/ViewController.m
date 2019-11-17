@@ -31,9 +31,10 @@
 
 @property(nonatomic,strong) AMStoryBottomSlideView *bottomSlideView;
 
-@property(nonatomic,strong) SCBMKPointAnnotationSubClass *currentPoint;
+@property(nonatomic,strong) SCBMKPointAnnotationSubClass *currentPoint;          //记录用户当前进行编辑的故事点
 
 @end
+
 
 @implementation ViewController
 
@@ -116,7 +117,13 @@
     return nil;
 }
 
+
+
 - (void)mapview:(BMKMapView *)mapView onLongClick:(CLLocationCoordinate2D)coordinate{
+    
+    //当前点会发生变化，进行当前点的信息保存更新
+    if(self.currentPoint)
+        [self updateCurrentPoint];
     
     //获取长按点位置信息
     BMKGeoCodeSearch *geoCodeSearch = [[BMKGeoCodeSearch alloc]init];
@@ -136,12 +143,6 @@
      成功返回YES，否则返回NO
      */
     
-    //长按之后底部的slideview会被更换
-    if(self.bottomSlideView)
-        [self.bottomSlideView removeFromSuperview];
-    self.bottomSlideView = [[AMStoryBottomSlideView alloc] initWithFrame:self.view.bounds];
-    self.bottomSlideView.delegate = self;
-    [self.view addSubview:self.bottomSlideView];
     BOOL flag = [geoCodeSearch reverseGeoCode:reverseGeoCodeOption];
     if (flag) {
         NSLog(@"反地理编码检索成功");
@@ -151,55 +152,61 @@
         
     }
     
-    
     //使用子类来记录该点的ID---结合Coredata
     SCBMKPointAnnotationSubClass* annotation = [[SCBMKPointAnnotationSubClass alloc]init];
     annotation.coordinate = coordinate;
+    annotation.createdtime = [NSDate date];
     
+    //更新当前点
     self.currentPoint = annotation;
-    NSLog(@"+++++%p",self.currentPoint);
+    //更新bottomview
+    [self updateCurrentBottomSlideView];
+    
     [self.mapView addAnnotation:annotation];
     
 }
 
 - (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view{
     
+    //当前点可能发生变化,信息更新
+    [self updateCurrentPoint];
+    
+    //更新当前点--只要当前点发生变化
+    //1.发生之前，保存上一次点的信息
+    //2.发生之后，更新bottomview
     self.currentPoint = (SCBMKPointAnnotationSubClass*)view.annotation;
+    //更新bottomview
+    [self updateCurrentBottomSlideView];
     
-    NSLog(@"+++++%p",self.currentPoint);
-    
-    NSManagedObjectID *ID = self.currentPoint.pointID;
-    
-    int flag=0;
-    if(ID)
+    //更新PaoPaoview
+    ((StoryPaopaoView*)view.paopaoView.subviews[0]).titleLabel.text = self.currentPoint.title;
+    ((StoryPaopaoView*)view.paopaoView.subviews[0]).storyLabel.text = self.currentPoint.content;
+    if(self.bottomSlideView.firstImg)
     {
-       NSDictionary* dic = [[CoreDataManager sharedInstance] checkPointByObjectID:ID];
-        NSLog(@"%@",dic);
-        if(dic)
-        {
-            ((StoryPaopaoView*)view.paopaoView.subviews[0]).titleLabel.text = dic[@"title"];
-            ((StoryPaopaoView*)view.paopaoView.subviews[0]).storyLabel.text = dic[@"content"];
-//            [((StoryPaopaoView*)view.paopaoView.subviews[0]).titleLabel sizeToFit];
-//            [((StoryPaopaoView*)view.paopaoView.subviews[0]).storyLabel sizeToFit];
-//            
-            self.bottomSlideView.StoryTextView.text = dic[@"content"];
-            self.bottomSlideView.TitleTextView.text = dic[@"title"];
-            flag=1;
-        }
+       //如果不为空,则添加上去
+       [((StoryPaopaoView*)view.paopaoView.subviews[0]).storyImgView setImage:self.bottomSlideView.firstImg];
     }
-    if(!flag)
-    {
-        ((StoryPaopaoView*)view.paopaoView.subviews[0]).titleLabel.text = self.bottomSlideView.TitleTextView.text;
-        NSLog(@"%p",((StoryPaopaoView*)view.paopaoView.subviews[0]).titleLabel);
-        ((StoryPaopaoView*)view.paopaoView.subviews[0]).storyLabel.text= self.bottomSlideView.StoryTextView.text;
-        if(self.bottomSlideView.firstImg)
-        {
-            //如果不为空,则添加上去
-            [((StoryPaopaoView*)view.paopaoView.subviews[0]).storyImgView setImage:self.bottomSlideView.firstImg];
-        }
-    }
-
+    
 }
+#pragma mark - 更新点信息和底部View信息
+- (void)updateCurrentPoint{
+    
+    //由于故事的编辑都在bottomview中进行，所以当发生点的切换或者添加时，当前点的信息要进行更新
+    self.currentPoint.title = self.bottomSlideView.TitleTextView.text;
+    self.currentPoint.content = self.bottomSlideView.StoryTextView.text;
+    self.currentPoint.address = self.bottomSlideView.addressLabel.text;
+    
+}
+
+- (void)updateCurrentBottomSlideView{
+    
+    //发生点切换或者添加时，底部的SlideView要发生更新,内容为切换后的点或者新添加的点
+    self.bottomSlideView.TitleTextView.text = self.currentPoint.title;
+    self.bottomSlideView.StoryTextView.text = self.currentPoint.content;
+    self.bottomSlideView.addressLabel.text = self.currentPoint.address;
+    
+}
+
 #pragma mark - BMKLocationManagerDelegate
 
 - (void)BMKLocationManager:(BMKLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nullable)error {
@@ -217,7 +224,6 @@
 }
 
 - (void)BMKLocationManager:(BMKLocationManager *)manager didUpdateLocation:(BMKLocation *)location orError:(NSError *)error {
-    
     
     if (error) {
         NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
@@ -258,16 +264,19 @@
 
 }
 
-#pragma mark -SlideView Delgate
+#pragma mark -AMStoryBottomSlideView Delgate
 - (void)addStoryPoint:(AMStoryBottomSlideView *)slideview{
     //进行存储操作
     NSMutableDictionary *dic;
     dic = [[NSMutableDictionary alloc] init];
     [dic setValue:slideview.StoryTextView.text forKey:@"content"];
     [dic setValue:slideview.TitleTextView.text forKey:@"title"];
+    [dic setValue:self.bottomSlideView.addressLabel.text forKey:@"address"];
+    
     [dic setValue:[NSNumber numberWithDouble:self.currentPoint.coordinate.latitude] forKey:@"latitude"];
     [dic setValue:[NSNumber numberWithDouble:self.currentPoint.coordinate.longitude] forKey:@"longitude"];
-    [dic setValue:[NSDate date] forKey:@"createdtime"];
+    [dic setValue:self.currentPoint.createdtime forKey:@"createdtime"];
+    
     //存储成功之后记录该点的ID
     self.currentPoint.pointID = [[CoreDataManager sharedInstance] createStoryPoint:dic];
     if(self.currentPoint.pointID)
@@ -296,6 +305,17 @@
     [self presentViewController:imagePickerVc animated:YES completion:nil];
 }
 #pragma mark - Lazy loading
+
+- (AMStoryBottomSlideView *)bottomSlideView{
+    if(!_bottomSlideView)
+    {
+         _bottomSlideView = [[AMStoryBottomSlideView alloc] initWithFrame:self.view.bounds];
+         _bottomSlideView.delegate = self;
+         [self.view addSubview:_bottomSlideView];
+    }
+    return _bottomSlideView;
+}
+
 - (BMKLocationManager *)locationManager {
     if (!_locationManager) {
         //初始化BMKLocationManager类的实例

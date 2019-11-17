@@ -94,9 +94,9 @@ static CoreDataManager* sharedInstance = nil;
     newpoint.longitude = [dic[@"longitude"] doubleValue];
     newpoint.title = dic[@"title"];
     newpoint.content = dic[@"content"];
+    newpoint.address = dic[@"address"];
     __autoreleasing NSError *error = nil;
     [_ManageObjectContext save:&error];
-    
     if(error)
     {
         NSLog(@"点数据添加失败");
@@ -119,6 +119,7 @@ static CoreDataManager* sharedInstance = nil;
         [dic setValue:obj.content forKey:@"content"];
         [dic setValue:obj.title forKey:@"title"];
         [dic setValue:obj.createdtime forKey:@"createdtime"];
+        [dic setValue:obj.address forKey:@"address"];
         return (NSDictionary*)dic;
     }
     else{

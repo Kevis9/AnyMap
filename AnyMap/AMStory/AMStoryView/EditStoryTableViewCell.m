@@ -86,10 +86,6 @@
     
 }
 
-- (void)textViewDidBeginEditing:(UITextView *)textView{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"TextViewChange" object:self];
-}
-
 #pragma mark -获取父视图Tableview
 - (UITableView *)tableView{
 

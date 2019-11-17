@@ -21,7 +21,4 @@
 @dynamic title;
 @dynamic address;
 
-- (void)setAddress:(NSString *)address{
-    
-}
 @end
