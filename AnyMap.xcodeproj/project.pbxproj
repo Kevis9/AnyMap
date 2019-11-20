@@ -7,10 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C3F8D3E238518CC006C3DA9 /* LMNTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D05238518CC006C3DA9 /* LMNTextView.m */; };
+		4C3F8D3F238518CC006C3DA9 /* UIFont+LMNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D06238518CC006C3DA9 /* UIFont+LMNote.m */; };
+		4C3F8D40238518CC006C3DA9 /* LMNTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D07238518CC006C3DA9 /* LMNTextStorage.m */; };
+		4C3F8D41238518CC006C3DA9 /* LMNTextStorage+Export.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D0B238518CC006C3DA9 /* LMNTextStorage+Export.m */; };
+		4C3F8D42238518CC006C3DA9 /* LMNPhotoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D0E238518CC006C3DA9 /* LMNPhotoCollectionCell.m */; };
+		4C3F8D43238518CC006C3DA9 /* LMNImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D0F238518CC006C3DA9 /* LMNImageView.m */; };
+		4C3F8D44238518CC006C3DA9 /* LMNToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D15238518CC006C3DA9 /* LMNToolBar.m */; };
+		4C3F8D45238518CC006C3DA9 /* LMNWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D16238518CC006C3DA9 /* LMNWebViewController.m */; };
+		4C3F8D46238518CC006C3DA9 /* LMNImageInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D17238518CC006C3DA9 /* LMNImageInputViewController.m */; };
+		4C3F8D47238518CC006C3DA9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4C3F8D19238518CC006C3DA9 /* .gitignore */; };
+		4C3F8D48238518CC006C3DA9 /* Feature in Resources */ = {isa = PBXBuildFile; fileRef = 4C3F8D1A238518CC006C3DA9 /* Feature */; };
+		4C3F8D49238518CC006C3DA9 /* LMNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D1C238518CC006C3DA9 /* LMNoteViewController.m */; };
+		4C3F8D4A238518CC006C3DA9 /* LMNLineChain+Numbering.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D1E238518CC006C3DA9 /* LMNLineChain+Numbering.m */; };
+		4C3F8D4B238518CC006C3DA9 /* LMNSpecialLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D26238518CC006C3DA9 /* LMNSpecialLine.m */; };
+		4C3F8D4C238518CC006C3DA9 /* LMNLineChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D27238518CC006C3DA9 /* LMNLineChain.m */; };
+		4C3F8D4D238518CC006C3DA9 /* LMNBulletsLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D28238518CC006C3DA9 /* LMNBulletsLine.m */; };
+		4C3F8D4E238518CC006C3DA9 /* LMNNumberingLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D29238518CC006C3DA9 /* LMNNumberingLine.m */; };
+		4C3F8D4F238518CC006C3DA9 /* LMNImageLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D2A238518CC006C3DA9 /* LMNImageLine.m */; };
+		4C3F8D50238518CC006C3DA9 /* LMNLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D2C238518CC006C3DA9 /* LMNLine.m */; };
+		4C3F8D51238518CC006C3DA9 /* LMNTextLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D2D238518CC006C3DA9 /* LMNTextLine.m */; };
+		4C3F8D52238518CC006C3DA9 /* LMNCheckboxLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D2F238518CC006C3DA9 /* LMNCheckboxLine.m */; };
+		4C3F8D53238518CC006C3DA9 /* LMNItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D32238518CC006C3DA9 /* LMNItem.m */; };
+		4C3F8D54238518CC006C3DA9 /* LMNFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D33238518CC006C3DA9 /* LMNFolder.m */; };
+		4C3F8D55238518CC006C3DA9 /* LMNDraft.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D34238518CC006C3DA9 /* LMNDraft.m */; };
+		4C3F8D56238518CC006C3DA9 /* NSTextAttachment+LMNStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D3A238518CC006C3DA9 /* NSTextAttachment+LMNStore.m */; };
+		4C3F8D57238518CC006C3DA9 /* UIImage+LMNStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D3C238518CC006C3DA9 /* UIImage+LMNStore.m */; };
+		4C3F8D58238518CC006C3DA9 /* LMNStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D3D238518CC006C3DA9 /* LMNStore.m */; };
+		4C3F8D5B23851A6C006C3DA9 /* AMStoryHTMLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8D5A23851A6C006C3DA9 /* AMStoryHTMLTableViewCell.m */; };
 		4C7DE1EF23614D1700C444C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE1EE23614D1700C444C2 /* AppDelegate.m */; };
 		4C7DE1F223614D1700C444C2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE1F123614D1700C444C2 /* SceneDelegate.m */; };
 		4C7DE1F523614D1700C444C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE1F423614D1700C444C2 /* ViewController.m */; };
-		4C7DE1F823614D1700C444C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7DE1F623614D1700C444C2 /* Main.storyboard */; };
 		4C7DE1FA23614D1F00C444C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C7DE1F923614D1F00C444C2 /* Assets.xcassets */; };
 		4C7DE1FD23614D1F00C444C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7DE1FB23614D1F00C444C2 /* LaunchScreen.storyboard */; };
 		4C7DE20023614D1F00C444C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7DE1FF23614D1F00C444C2 /* main.m */; };
@@ -49,6 +76,62 @@
 
 /* Begin PBXFileReference section */
 		3EB21340DE6ED6F0DEAE0766 /* Pods-STUMap2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STUMap2.release.xcconfig"; path = "Target Support Files/Pods-STUMap2/Pods-STUMap2.release.xcconfig"; sourceTree = "<group>"; };
+		4C3F8D05238518CC006C3DA9 /* LMNTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNTextView.m; sourceTree = "<group>"; };
+		4C3F8D06238518CC006C3DA9 /* UIFont+LMNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+LMNote.m"; sourceTree = "<group>"; };
+		4C3F8D07238518CC006C3DA9 /* LMNTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNTextStorage.m; sourceTree = "<group>"; };
+		4C3F8D08238518CC006C3DA9 /* LMNTextStorage+Export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LMNTextStorage+Export.h"; sourceTree = "<group>"; };
+		4C3F8D09238518CC006C3DA9 /* LMNTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNTextView.h; sourceTree = "<group>"; };
+		4C3F8D0A238518CC006C3DA9 /* UIFont+LMNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+LMNote.h"; sourceTree = "<group>"; };
+		4C3F8D0B238518CC006C3DA9 /* LMNTextStorage+Export.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LMNTextStorage+Export.m"; sourceTree = "<group>"; };
+		4C3F8D0C238518CC006C3DA9 /* LMNTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNTextStorage.h; sourceTree = "<group>"; };
+		4C3F8D0E238518CC006C3DA9 /* LMNPhotoCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNPhotoCollectionCell.m; sourceTree = "<group>"; };
+		4C3F8D0F238518CC006C3DA9 /* LMNImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNImageView.m; sourceTree = "<group>"; };
+		4C3F8D10238518CC006C3DA9 /* LMNWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNWebViewController.h; sourceTree = "<group>"; };
+		4C3F8D11238518CC006C3DA9 /* LMNToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNToolBar.h; sourceTree = "<group>"; };
+		4C3F8D12238518CC006C3DA9 /* LMNImageInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNImageInputViewController.h; sourceTree = "<group>"; };
+		4C3F8D13238518CC006C3DA9 /* LMNImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNImageView.h; sourceTree = "<group>"; };
+		4C3F8D14238518CC006C3DA9 /* LMNPhotoCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNPhotoCollectionCell.h; sourceTree = "<group>"; };
+		4C3F8D15238518CC006C3DA9 /* LMNToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNToolBar.m; sourceTree = "<group>"; };
+		4C3F8D16238518CC006C3DA9 /* LMNWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNWebViewController.m; sourceTree = "<group>"; };
+		4C3F8D17238518CC006C3DA9 /* LMNImageInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNImageInputViewController.m; sourceTree = "<group>"; };
+		4C3F8D18238518CC006C3DA9 /* LMNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNoteViewController.h; sourceTree = "<group>"; };
+		4C3F8D19238518CC006C3DA9 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		4C3F8D1A238518CC006C3DA9 /* Feature */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Feature; sourceTree = "<group>"; };
+		4C3F8D1B238518CC006C3DA9 /* LMNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNote.h; sourceTree = "<group>"; };
+		4C3F8D1C238518CC006C3DA9 /* LMNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNoteViewController.m; sourceTree = "<group>"; };
+		4C3F8D1E238518CC006C3DA9 /* LMNLineChain+Numbering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LMNLineChain+Numbering.m"; sourceTree = "<group>"; };
+		4C3F8D1F238518CC006C3DA9 /* LMNImageLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNImageLine.h; sourceTree = "<group>"; };
+		4C3F8D20238518CC006C3DA9 /* LMNNumberingLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNNumberingLine.h; sourceTree = "<group>"; };
+		4C3F8D21238518CC006C3DA9 /* LMNBulletsLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNBulletsLine.h; sourceTree = "<group>"; };
+		4C3F8D22238518CC006C3DA9 /* LMNLineModes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNLineModes.h; sourceTree = "<group>"; };
+		4C3F8D23238518CC006C3DA9 /* LMNTextLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNTextLine.h; sourceTree = "<group>"; };
+		4C3F8D24238518CC006C3DA9 /* LMNLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNLine.h; sourceTree = "<group>"; };
+		4C3F8D25238518CC006C3DA9 /* LMNCheckboxLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNCheckboxLine.h; sourceTree = "<group>"; };
+		4C3F8D26238518CC006C3DA9 /* LMNSpecialLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNSpecialLine.m; sourceTree = "<group>"; };
+		4C3F8D27238518CC006C3DA9 /* LMNLineChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNLineChain.m; sourceTree = "<group>"; };
+		4C3F8D28238518CC006C3DA9 /* LMNBulletsLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNBulletsLine.m; sourceTree = "<group>"; };
+		4C3F8D29238518CC006C3DA9 /* LMNNumberingLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNNumberingLine.m; sourceTree = "<group>"; };
+		4C3F8D2A238518CC006C3DA9 /* LMNImageLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNImageLine.m; sourceTree = "<group>"; };
+		4C3F8D2B238518CC006C3DA9 /* LMNLineChain+Numbering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LMNLineChain+Numbering.h"; sourceTree = "<group>"; };
+		4C3F8D2C238518CC006C3DA9 /* LMNLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNLine.m; sourceTree = "<group>"; };
+		4C3F8D2D238518CC006C3DA9 /* LMNTextLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNTextLine.m; sourceTree = "<group>"; };
+		4C3F8D2E238518CC006C3DA9 /* LMNLineChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNLineChain.h; sourceTree = "<group>"; };
+		4C3F8D2F238518CC006C3DA9 /* LMNCheckboxLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNCheckboxLine.m; sourceTree = "<group>"; };
+		4C3F8D30238518CC006C3DA9 /* LMNSpecialLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNSpecialLine.h; sourceTree = "<group>"; };
+		4C3F8D32238518CC006C3DA9 /* LMNItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNItem.m; sourceTree = "<group>"; };
+		4C3F8D33238518CC006C3DA9 /* LMNFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNFolder.m; sourceTree = "<group>"; };
+		4C3F8D34238518CC006C3DA9 /* LMNDraft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNDraft.m; sourceTree = "<group>"; };
+		4C3F8D35238518CC006C3DA9 /* NSTextAttachment+LMNStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextAttachment+LMNStore.h"; sourceTree = "<group>"; };
+		4C3F8D36238518CC006C3DA9 /* LMNStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNStore.h; sourceTree = "<group>"; };
+		4C3F8D37238518CC006C3DA9 /* UIImage+LMNStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LMNStore.h"; sourceTree = "<group>"; };
+		4C3F8D38238518CC006C3DA9 /* LMNFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNFolder.h; sourceTree = "<group>"; };
+		4C3F8D39238518CC006C3DA9 /* LMNItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNItem.h; sourceTree = "<group>"; };
+		4C3F8D3A238518CC006C3DA9 /* NSTextAttachment+LMNStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextAttachment+LMNStore.m"; sourceTree = "<group>"; };
+		4C3F8D3B238518CC006C3DA9 /* LMNDraft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNDraft.h; sourceTree = "<group>"; };
+		4C3F8D3C238518CC006C3DA9 /* UIImage+LMNStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LMNStore.m"; sourceTree = "<group>"; };
+		4C3F8D3D238518CC006C3DA9 /* LMNStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNStore.m; sourceTree = "<group>"; };
+		4C3F8D5923851A6C006C3DA9 /* AMStoryHTMLTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMStoryHTMLTableViewCell.h; sourceTree = "<group>"; };
+		4C3F8D5A23851A6C006C3DA9 /* AMStoryHTMLTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMStoryHTMLTableViewCell.m; sourceTree = "<group>"; };
 		4C7DE1EA23614D1700C444C2 /* AnyMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C7DE1ED23614D1700C444C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C7DE1EE23614D1700C444C2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,7 +139,6 @@
 		4C7DE1F123614D1700C444C2 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		4C7DE1F323614D1700C444C2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4C7DE1F423614D1700C444C2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		4C7DE1F723614D1700C444C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C7DE1F923614D1F00C444C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C7DE1FC23614D1F00C444C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C7DE1FE23614D1F00C444C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,6 +210,99 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4C3F8D03238518CC006C3DA9 /* LMNote */ = {
+			isa = PBXGroup;
+			children = (
+				4C3F8D04238518CC006C3DA9 /* TextView */,
+				4C3F8D0D238518CC006C3DA9 /* OtherViews */,
+				4C3F8D18238518CC006C3DA9 /* LMNoteViewController.h */,
+				4C3F8D1C238518CC006C3DA9 /* LMNoteViewController.m */,
+				4C3F8D19238518CC006C3DA9 /* .gitignore */,
+				4C3F8D1A238518CC006C3DA9 /* Feature */,
+				4C3F8D1B238518CC006C3DA9 /* LMNote.h */,
+				4C3F8D1D238518CC006C3DA9 /* Lines */,
+				4C3F8D31238518CC006C3DA9 /* Store */,
+			);
+			path = LMNote;
+			sourceTree = "<group>";
+		};
+		4C3F8D04238518CC006C3DA9 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				4C3F8D05238518CC006C3DA9 /* LMNTextView.m */,
+				4C3F8D06238518CC006C3DA9 /* UIFont+LMNote.m */,
+				4C3F8D07238518CC006C3DA9 /* LMNTextStorage.m */,
+				4C3F8D08238518CC006C3DA9 /* LMNTextStorage+Export.h */,
+				4C3F8D09238518CC006C3DA9 /* LMNTextView.h */,
+				4C3F8D0A238518CC006C3DA9 /* UIFont+LMNote.h */,
+				4C3F8D0B238518CC006C3DA9 /* LMNTextStorage+Export.m */,
+				4C3F8D0C238518CC006C3DA9 /* LMNTextStorage.h */,
+			);
+			path = TextView;
+			sourceTree = "<group>";
+		};
+		4C3F8D0D238518CC006C3DA9 /* OtherViews */ = {
+			isa = PBXGroup;
+			children = (
+				4C3F8D0E238518CC006C3DA9 /* LMNPhotoCollectionCell.m */,
+				4C3F8D0F238518CC006C3DA9 /* LMNImageView.m */,
+				4C3F8D10238518CC006C3DA9 /* LMNWebViewController.h */,
+				4C3F8D11238518CC006C3DA9 /* LMNToolBar.h */,
+				4C3F8D12238518CC006C3DA9 /* LMNImageInputViewController.h */,
+				4C3F8D13238518CC006C3DA9 /* LMNImageView.h */,
+				4C3F8D14238518CC006C3DA9 /* LMNPhotoCollectionCell.h */,
+				4C3F8D15238518CC006C3DA9 /* LMNToolBar.m */,
+				4C3F8D16238518CC006C3DA9 /* LMNWebViewController.m */,
+				4C3F8D17238518CC006C3DA9 /* LMNImageInputViewController.m */,
+			);
+			path = OtherViews;
+			sourceTree = "<group>";
+		};
+		4C3F8D1D238518CC006C3DA9 /* Lines */ = {
+			isa = PBXGroup;
+			children = (
+				4C3F8D1E238518CC006C3DA9 /* LMNLineChain+Numbering.m */,
+				4C3F8D1F238518CC006C3DA9 /* LMNImageLine.h */,
+				4C3F8D20238518CC006C3DA9 /* LMNNumberingLine.h */,
+				4C3F8D21238518CC006C3DA9 /* LMNBulletsLine.h */,
+				4C3F8D22238518CC006C3DA9 /* LMNLineModes.h */,
+				4C3F8D23238518CC006C3DA9 /* LMNTextLine.h */,
+				4C3F8D24238518CC006C3DA9 /* LMNLine.h */,
+				4C3F8D25238518CC006C3DA9 /* LMNCheckboxLine.h */,
+				4C3F8D26238518CC006C3DA9 /* LMNSpecialLine.m */,
+				4C3F8D27238518CC006C3DA9 /* LMNLineChain.m */,
+				4C3F8D28238518CC006C3DA9 /* LMNBulletsLine.m */,
+				4C3F8D29238518CC006C3DA9 /* LMNNumberingLine.m */,
+				4C3F8D2A238518CC006C3DA9 /* LMNImageLine.m */,
+				4C3F8D2B238518CC006C3DA9 /* LMNLineChain+Numbering.h */,
+				4C3F8D2C238518CC006C3DA9 /* LMNLine.m */,
+				4C3F8D2D238518CC006C3DA9 /* LMNTextLine.m */,
+				4C3F8D2E238518CC006C3DA9 /* LMNLineChain.h */,
+				4C3F8D2F238518CC006C3DA9 /* LMNCheckboxLine.m */,
+				4C3F8D30238518CC006C3DA9 /* LMNSpecialLine.h */,
+			);
+			path = Lines;
+			sourceTree = "<group>";
+		};
+		4C3F8D31238518CC006C3DA9 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				4C3F8D32238518CC006C3DA9 /* LMNItem.m */,
+				4C3F8D33238518CC006C3DA9 /* LMNFolder.m */,
+				4C3F8D34238518CC006C3DA9 /* LMNDraft.m */,
+				4C3F8D35238518CC006C3DA9 /* NSTextAttachment+LMNStore.h */,
+				4C3F8D36238518CC006C3DA9 /* LMNStore.h */,
+				4C3F8D37238518CC006C3DA9 /* UIImage+LMNStore.h */,
+				4C3F8D38238518CC006C3DA9 /* LMNFolder.h */,
+				4C3F8D39238518CC006C3DA9 /* LMNItem.h */,
+				4C3F8D3A238518CC006C3DA9 /* NSTextAttachment+LMNStore.m */,
+				4C3F8D3B238518CC006C3DA9 /* LMNDraft.h */,
+				4C3F8D3C238518CC006C3DA9 /* UIImage+LMNStore.m */,
+				4C3F8D3D238518CC006C3DA9 /* LMNStore.m */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		4C79BB2C2380240300DB08EB /* AMStory */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +319,8 @@
 				4C7DE4392364994B00C444C2 /* AMStoryBottomSlideView.m */,
 				4C7DE4442364A00800C444C2 /* EditStoryTableViewCell.h */,
 				4C7DE4452364A00800C444C2 /* EditStoryTableViewCell.m */,
+				4C3F8D5923851A6C006C3DA9 /* AMStoryHTMLTableViewCell.h */,
+				4C3F8D5A23851A6C006C3DA9 /* AMStoryHTMLTableViewCell.m */,
 			);
 			path = AMStoryView;
 			sourceTree = "<group>";
@@ -173,6 +350,7 @@
 		4C7DE1EC23614D1700C444C2 /* AnyMap */ = {
 			isa = PBXGroup;
 			children = (
+				4C3F8D03238518CC006C3DA9 /* LMNote */,
 				4C79BB2C2380240300DB08EB /* AMStory */,
 				4C7DE43D236499B300C444C2 /* BottomSlideView */,
 				4C7DE1ED23614D1700C444C2 /* AppDelegate.h */,
@@ -181,7 +359,6 @@
 				4C7DE1F123614D1700C444C2 /* SceneDelegate.m */,
 				4C7DE1F323614D1700C444C2 /* ViewController.h */,
 				4C7DE1F423614D1700C444C2 /* ViewController.m */,
-				4C7DE1F623614D1700C444C2 /* Main.storyboard */,
 				4C7DE1F923614D1F00C444C2 /* Assets.xcassets */,
 				4C7DE1FB23614D1F00C444C2 /* LaunchScreen.storyboard */,
 				4C7DE1FE23614D1F00C444C2 /* Info.plist */,
@@ -356,8 +533,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C7DE1FD23614D1F00C444C2 /* LaunchScreen.storyboard in Resources */,
+				4C3F8D47238518CC006C3DA9 /* .gitignore in Resources */,
 				4C7DE1FA23614D1F00C444C2 /* Assets.xcassets in Resources */,
-				4C7DE1F823614D1700C444C2 /* Main.storyboard in Resources */,
+				4C3F8D48238518CC006C3DA9 /* Feature in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,18 +605,44 @@
 				4CA214142380E22300C6626A /* StoryPointModel+CoreDataClass.m in Sources */,
 				4C7DE4652365BD5300C444C2 /* SCBMKPointAnnotationSubClass.m in Sources */,
 				4C7DE1F523614D1700C444C2 /* ViewController.m in Sources */,
+				4C3F8D4B238518CC006C3DA9 /* LMNSpecialLine.m in Sources */,
+				4C3F8D45238518CC006C3DA9 /* LMNWebViewController.m in Sources */,
 				4C7DE1EF23614D1700C444C2 /* AppDelegate.m in Sources */,
+				4C3F8D52238518CC006C3DA9 /* LMNCheckboxLine.m in Sources */,
 				4C7DE43C2364994B00C444C2 /* AMStoryBottomSlideView.m in Sources */,
+				4C3F8D4E238518CC006C3DA9 /* LMNNumberingLine.m in Sources */,
+				4C3F8D58238518CC006C3DA9 /* LMNStore.m in Sources */,
 				4CA2140F2380465100C6626A /* BottomSlideView.m in Sources */,
 				4C7DE4462364A00800C444C2 /* EditStoryTableViewCell.m in Sources */,
+				4C3F8D53238518CC006C3DA9 /* LMNItem.m in Sources */,
+				4C3F8D43238518CC006C3DA9 /* LMNImageView.m in Sources */,
 				4C7DE43B2364994B00C444C2 /* UIView+Size.m in Sources */,
 				4C7DE20023614D1F00C444C2 /* main.m in Sources */,
 				4C7DE4562365874900C444C2 /* CoreDataManager.m in Sources */,
+				4C3F8D40238518CC006C3DA9 /* LMNTextStorage.m in Sources */,
+				4C3F8D4A238518CC006C3DA9 /* LMNLineChain+Numbering.m in Sources */,
+				4C3F8D4C238518CC006C3DA9 /* LMNLineChain.m in Sources */,
 				4C7DE1F223614D1700C444C2 /* SceneDelegate.m in Sources */,
+				4C3F8D41238518CC006C3DA9 /* LMNTextStorage+Export.m in Sources */,
+				4C3F8D5B23851A6C006C3DA9 /* AMStoryHTMLTableViewCell.m in Sources */,
+				4C3F8D50238518CC006C3DA9 /* LMNLine.m in Sources */,
 				4C7DE4492365427B00C444C2 /* StoryPaopaoView.m in Sources */,
+				4C3F8D51238518CC006C3DA9 /* LMNTextLine.m in Sources */,
 				4CA214152380E22300C6626A /* StoryPointModel+CoreDataProperties.m in Sources */,
+				4C3F8D46238518CC006C3DA9 /* LMNImageInputViewController.m in Sources */,
+				4C3F8D3F238518CC006C3DA9 /* UIFont+LMNote.m in Sources */,
+				4C3F8D55238518CC006C3DA9 /* LMNDraft.m in Sources */,
+				4C3F8D44238518CC006C3DA9 /* LMNToolBar.m in Sources */,
+				4C3F8D4F238518CC006C3DA9 /* LMNImageLine.m in Sources */,
+				4C3F8D42238518CC006C3DA9 /* LMNPhotoCollectionCell.m in Sources */,
 				4C7DE44C23656EF700C444C2 /* StoryDB.xcdatamodeld in Sources */,
 				4C7DE44323649F9F00C444C2 /* PlaceholderTextView.m in Sources */,
+				4C3F8D57238518CC006C3DA9 /* UIImage+LMNStore.m in Sources */,
+				4C3F8D3E238518CC006C3DA9 /* LMNTextView.m in Sources */,
+				4C3F8D54238518CC006C3DA9 /* LMNFolder.m in Sources */,
+				4C3F8D49238518CC006C3DA9 /* LMNoteViewController.m in Sources */,
+				4C3F8D56238518CC006C3DA9 /* NSTextAttachment+LMNStore.m in Sources */,
+				4C3F8D4D238518CC006C3DA9 /* LMNBulletsLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,14 +678,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4C7DE1F623614D1700C444C2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C7DE1F723614D1700C444C2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4C7DE1FB23614D1F00C444C2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -611,6 +807,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q58XYJ7VA6;
 				INFOPLIST_FILE = AnyMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -634,6 +831,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q58XYJ7VA6;
 				INFOPLIST_FILE = AnyMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

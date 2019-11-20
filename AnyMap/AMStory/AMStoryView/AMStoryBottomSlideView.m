@@ -10,6 +10,7 @@
 #import "AMStoryBottomSlideView.h"
 #import "UIView+Size.h"
 #import "EditStoryTableViewCell.h"
+#import "AMStoryHTMLTableViewCell.h"
 #import <SDAutoLayout.h>
 #import <Masonry.h>
 
@@ -50,9 +51,8 @@
     self.numOfImgs = 0;
     
     [self.tableView registerClass:[EditStoryTableViewCell class] forCellReuseIdentifier:@"cellWithStory"];
+    [self.tableView registerClass:[AMStoryHTMLTableViewCell class] forCellReuseIdentifier:@"cellWithHtml"];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cellWithBtn"];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cellWithImg"];
-
     
 }
 
@@ -60,7 +60,7 @@
 #pragma mark - TableView DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 3;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -153,32 +153,29 @@
     else if(indexPath.row==2)
     {
         
-        EditStoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellWithStory"];
-        
+        AMStoryHTMLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellWithHtml"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//        [cell.textview.placeholder setText:@"写下你的故事~"];
-        [cell.label setText:@"故事"];
-        self.StoryTextView = cell.textview;
+//      self.StoryTextView = cell.textview;
         return cell;
     }
-    else if(indexPath.row==3)
-    {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellWithImg"];
-        
-        //设置不可点击
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell.contentView addSubview:self.addImgBtn];
-        //btn布局
-        [self.addImgBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(cell.contentView.mas_top).offset(15).priority(999);
-            make.height.mas_greaterThanOrEqualTo(120).priority(888);
-            make.bottom.equalTo(cell.contentView.mas_bottom).offset(-15).priority(777);
-            make.left.equalTo(cell.contentView.mas_left).offset(22);
-            make.right.equalTo(cell.contentView.mas_right).offset(-280);
-        }];
-        self.tmpCell = cell;
-        return cell;
-    }
+//    else if(indexPath.row==3)
+//    {
+//        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellWithImg"];
+//
+//        //设置不可点击
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        [cell.contentView addSubview:self.addImgBtn];
+//        //btn布局
+//        [self.addImgBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(cell.contentView.mas_top).offset(15).priority(999);
+//            make.height.mas_greaterThanOrEqualTo(120).priority(888);
+//            make.bottom.equalTo(cell.contentView.mas_bottom).offset(-15).priority(777);
+//            make.left.equalTo(cell.contentView.mas_left).offset(22);
+//            make.right.equalTo(cell.contentView.mas_right).offset(-280);
+//        }];
+//        self.tmpCell = cell;
+//        return cell;
+//    }
     return nil;
 }
 
@@ -259,30 +256,31 @@
 
 //更新btn约束
 //图片添加完成之后，需要更新虚线btn的约束，从而实现cell高度自适应
-- (void)updateConstraints{
-    if(!self.tmpCell)
-        return;
-    NSInteger index = self.numOfImgs;
-    //更新btn布局
-    [self.addImgBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.tmpCell.contentView.mas_top).offset((index/3)*129+15);
-    make.bottom.equalTo(self.tmpCell.contentView.mas_bottom).offset(-15);
-
-        make.left.equalTo(self.tmpCell.contentView.mas_left).offset((index%3)*129+22);
-      make.right.equalTo(self.tmpCell.contentView.mas_right).offset(-((2-index%3)*129+22));
-        make.height.greaterThanOrEqualTo(@120);
-        make.width.lessThanOrEqualTo(@112);
-    }];
-
-    [super updateConstraints];
-}
+//当进行富文本编辑的时候，不能重写该方法---暂未弄懂
+//- (void)updateConstraints{
+//    if(!self.tmpCell)
+//        return;
+//    NSInteger index = self.numOfImgs;
+//    //更新btn布局
+//    [self.addImgBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.tmpCell.contentView.mas_top).offset((index/3)*129+15);
+//    make.bottom.equalTo(self.tmpCell.contentView.mas_bottom).offset(-15);
+//
+//        make.left.equalTo(self.tmpCell.contentView.mas_left).offset((index%3)*129+22);
+//      make.right.equalTo(self.tmpCell.contentView.mas_right).offset(-((2-index%3)*129+22));
+//        make.height.greaterThanOrEqualTo(@120);
+//        make.width.lessThanOrEqualTo(@112);
+//    }];
+//
+//    [super updateConstraints];
+//}
 
 
 #pragma mark - TableView Delegate
 
 //还有一些delegate的方法在父类中实现
 
-#pragma mark -添加故事点
+#pragma mark  - Btn事件
 
 - (void)addPoint:(UIButton*)btn{
     
@@ -290,6 +288,14 @@
         [self.delegate addStoryPoint:self];
     
 }
+
+- (void)editStory:(UIButton*)btn{
+    //编辑故事
+    if([self.delegate respondsToSelector:@selector(editStory:)])
+        [self.delegate editStory:self];
+    
+}
+
 
 
 #pragma mark - Lazy loading
@@ -342,6 +348,7 @@
         [_editPointbtn setTitle:@"编辑" forState:UIControlStateNormal];
         _editPointbtn.titleLabel.font = [UIFont systemFontOfSize:15];
         _editPointbtn.layer.cornerRadius = 8;
+        [_editPointbtn addTarget:self action:@selector(editStory:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _editPointbtn;
 }
@@ -389,7 +396,7 @@
         CAShapeLayer *layer = [[CAShapeLayer alloc] init];
         layer.frame = CGRectMake(0,0,_addImgBtn.frame.size.width,_addImgBtn.frame.size.height);
         layer.backgroundColor = [UIColor clearColor].CGColor;
-
+        
         UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:layer.frame cornerRadius:8];
         layer.path = path.CGPath;
         layer.lineWidth = 2.0f;

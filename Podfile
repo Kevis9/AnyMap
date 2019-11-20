@@ -8,5 +8,9 @@ target 'AnyMap' do
    pod "Masonry"
    pod 'SDAutoLayout', '~> 2.1.3'
    pod 'TZImagePickerController' #iOS8 and later
+   pod 'AFNetworking', '~> 3.0'
+   pod 'SVProgressHUD'
+
+
 
 end

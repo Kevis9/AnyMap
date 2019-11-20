@@ -19,6 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+//    self.window = [[UIWindow alloc] init];
+    //百度地图相关设置
     [[BMKLocationAuth sharedInstance] checkPermisionWithKey:@"S4ZLGLbkd6XlRxcj8SVClXtK4ciOQM2Z" authDelegate:self];
     if ([BMKMapManager setCoordinateTypeUsedInBaiduMapSDK:BMK_COORDTYPE_BD09LL]) {
         NSLog(@"经纬度类型设置成功");

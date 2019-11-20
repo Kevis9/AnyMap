@@ -83,7 +83,6 @@
     {
         self.textview.placeholder.hidden = YES;
     }
-    
 }
 
 #pragma mark -获取父视图Tableview

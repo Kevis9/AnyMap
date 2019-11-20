@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-AnyMap/Pods-AnyMap-resources.sh
 ${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/mapapi.bundle
+${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle
 ${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle

@@ -14,8 +14,13 @@
 #import "AMStoryBottomSlideView.h"
 #import "StoryPaopaoView.h"
 #import "CoreDataManager.h"
+#import "LMNoteViewController.h"
 #import "SCBMKPointAnnotationSubClass.h"
+#import "LMNFolder.h"
+#import "LMNStore.h"
+#import "LMNDraft.h"
 #import <TZImagePickerController.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface ViewController ()<BMKLocationManagerDelegate,
                              BMKMapViewDelegate,
@@ -33,6 +38,8 @@
 
 @property(nonatomic,strong) SCBMKPointAnnotationSubClass *currentPoint;          //记录用户当前进行编辑的故事点
 
+@property (nonatomic, strong, readwrite) LMNFolder *folder;                     //用户本地记录的故事集合目录
+
 @end
 
 
@@ -40,19 +47,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    
+    self.folder = [LMNStore shared].rootFolder;
+    
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
     self.mapView.userTrackingMode = BMKUserTrackingModeFollow;
-    
     [self.mapView setZoomLevel:17];
+    
     [self.locationManager startUpdatingLocation];
     [self.locationManager startUpdatingHeading];
-    
     [self.view addSubview:self.mapView];
-    //[self.view addSubview:self.bottomSlideView];
-    
-    
+            
 }
 
 #pragma mark - Life Cycle
@@ -116,7 +123,6 @@
     }
     return nil;
 }
-
 
 
 - (void)mapview:(BMKMapView *)mapView onLongClick:(CLLocationCoordinate2D)coordinate{
@@ -228,6 +234,7 @@
 
 - (void)BMKLocationManager:(BMKLocationManager *)manager didUpdateLocation:(BMKLocation *)location orError:(NSError *)error {
     
+    NSLog(@"%@",error);
     if (error) {
         NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
     }
@@ -329,6 +336,17 @@
     
 }
 
+- (void)editStory:(AMStoryBottomSlideView *)slideview{
+    
+    LMNDraft *draft = [[LMNDraft alloc] initWithUUID:[NSUUID UUID] name:@"" date:[NSDate date]];
+    draft.parent = self.folder;
+    LMNoteViewController *vc = [[LMNoteViewController alloc] initWithDraft:draft];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
 //选择图片
 - (void)pickImgFinishedHandle:(CellPickImgCopleteblock)block{
     
@@ -350,6 +368,8 @@
     [self presentViewController:imagePickerVC animated:YES completion:nil];
     
 }
+
+
 #pragma mark - Lazy loading
 
 - (AMStoryBottomSlideView *)bottomSlideView{
@@ -381,13 +401,14 @@
          设置为YES的时候必须保证 Background Modes 中的 Location updates 处于选中状态，否则会抛出异常。
          由于iOS系统限制，需要在定位未开始之前或定位停止之后，修改该属性的值才会有效果。
          */
-        _locationManager.allowsBackgroundLocationUpdates = NO;
+        _locationManager.allowsBackgroundLocationUpdates = YES;
         /**
          指定单次定位超时时间,默认为10s，最小值是2s。注意单次定位请求前设置。
          注意: 单次定位超时时间从确定了定位权限(非kCLAuthorizationStatusNotDetermined状态)
          后开始计算。
          */
-        _locationManager.locationTimeout = 10;
+        _locationManager.locationTimeout = 5;
+        
     }
     return _locationManager;
 }

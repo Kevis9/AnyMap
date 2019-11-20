@@ -19,6 +19,7 @@ typedef void(^CellPickImgCopleteblock)(NSArray* imgs);
 
 - (void)pickImgFinishedHandle:(CellPickImgCopleteblock)block;
 
+- (void)editStory:(AMStoryBottomSlideView*)slideview;
 @end
 
 @interface AMStoryBottomSlideView : BottomSlideView

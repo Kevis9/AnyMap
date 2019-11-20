@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EditStoryTableViewCell : UITableViewCell
 
 @property(nonatomic,strong) PlaceholderTextView *textview;
-@property(nonatomic,strong) UILabel* label;
+@property(nonatomic,strong) UILabel* label;     //显示"标题","故事"字段
+
 @end
 
 NS_ASSUME_NONNULL_END
