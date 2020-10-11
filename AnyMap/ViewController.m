@@ -22,6 +22,8 @@
 #import <TZImagePickerController.h>
 #import <CoreLocation/CoreLocation.h>
 
+#import "IndoorMapViewController.h"
+
 @interface ViewController ()<BMKLocationManagerDelegate,
                              BMKMapViewDelegate,
                              AMStoryBottomViewDelegate,
@@ -59,8 +61,37 @@
     [self.locationManager startUpdatingLocation];
     [self.locationManager startUpdatingHeading];
     [self.view addSubview:self.mapView];
+    
+    const CGFloat buttonSize = 50.0;
+    
+    UIButton* toIndoorMap = [[UIButton alloc] initWithFrame:CGRectMake(5.0, (self.view.frame.size.height - buttonSize) / 2, buttonSize, buttonSize)];
+    [toIndoorMap setTitle:@"IN" forState:UIControlStateNormal];
+    [toIndoorMap setBackgroundColor:UIColor.blackColor];
+    [self.view addSubview:toIndoorMap];
+    
+    [toIndoorMap addTarget:self action:@selector(intoIndoorMapView:) forControlEvents:UIControlEventTouchDown];
+    
             
+//    // 添加折线覆盖物
+//    CLLocationCoordinate2D coords[5] = {0};
+//    coords[0] = CLLocationCoordinate2DMake(0, 0);
+//    coords[1] = CLLocationCoordinate2DMake(39.912, 116.324);
+//    coords[2] = CLLocationCoordinate2DMake(39.968, 116.373);
+//    coords[3] = CLLocationCoordinate2DMake(39.912, 116.439);
+//    coords[4] = CLLocationCoordinate2DMake(39.968, 116.490);
+//    BMKPolyline *polyline = [BMKPolyline polylineWithCoordinates:coords count:5];
+//    [_mapView addOverlay:polyline];
 }
+
+#pragma mark - into the indoor view
+- (void)intoIndoorMapView:(id)sender {
+    NSLog(@"touchdown...");
+    IndoorMapViewController *indoorMapViewController = [[IndoorMapViewController alloc] init];
+    [indoorMapViewController.view setBackgroundColor:UIColor.cyanColor];
+    
+    [self presentViewController:indoorMapViewController animated:YES completion:nil];
+}
+
 
 #pragma mark - Life Cycle
 - (void)viewWillAppear:(BOOL)animated {
